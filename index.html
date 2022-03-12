@@ -7,9 +7,9 @@
 									|___/
 
 	-> Name: index.html
-	-> Description: Landing page for your fga-w3 site
+	-> Description: Landing page for https://www.fasmga.org/
 	-> Resource: /index.html
-	-> Licensing: GPLv3 | © 2022, Fasm.ga
+	-> Licensing: © 2022, Fasm.ga | https://www.fasmga.org/license
 -->
 
 <!--——————————————————--><!--——————————————————--><!--——————————————————--><!--——————————————————-->
@@ -32,34 +32,34 @@
 
 	<body>
 		<script id='jquery'
-			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			src="https://code.jquery.com/jquery-3.6.0.min.js?date=20220312_1"
 			integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
 			crossorigin="anonymous"
 		></script>
 
 		<script id='resources'
-			src="./res/index.js"
+			src="./res/index.js?date=20220312_1"
 		></script>
 		<script id='defaults'
-			src="./content/byUser/defaults.js"
+			src="./content/byUser/defaults.js?date=20220312_1"
 		></script>
 		<script id='usersettings'
-			src="./content/byUser/settings.js"
+			src="./content/byUser/settings.js?date=20220312_1"
 		></script>
 
 		<link id='colorscheme'
 			rel='stylesheet'
-			href="./src/css/theme/dark.css" />
+			href="./src/css/theme/dark.css?date=20220312_1" />
 		<link id='style'
 			rel='stylesheet'
-			href="./src/css/style.css" />
+			href="./src/css/style.css?date=20220312_1" />
 
 		<link id='favicon'
 			rel='icon'
 			href="./res/raster/favicon.ico" />
 
 		<script id='utils'
-			src="./src/js/utils.js"
+			src="./src/js/utils.js?date=20220312_1"
 		></script>
 
 		<header>
@@ -67,84 +67,124 @@
 				orientation='horizontal'
 			>
 				<a class='logo subheadline' href="/">
-					fga-w3 app
+					Fasm.ga
 				</a>
 				<a
-					href="#_home"
-					icon='home' title='Home'
+					href="#newLink"
+					icon='add_link' title='Shorten a link'
 				></a>
 				<a
 					href="#debugging"
 					icon='developer_board' title='JS Debug'
 				></a>
+				<a
+					href="#dashboard"
+					icon='dashboard' title='Dashboard'
+				></a>
+				<a
+					href="#settings"
+					icon='settings' title='Settings'
+				></a>
+				<a
+					href="https://blog.fasmga.org/"
+					icon='newspaper' title='Blog'
+				></a>
 			</nav>
 		</header>
 
-		<main>
-			<section id='_home'
-				title='Welcome'
+		<!-- <div class="content"> -->
+			<main>
+				<section id='newLink'
+					title='Shorten a link'
+				>
+					<main>
+						<form id='shortenlink'>
+							<input id='urlbox'
+								type='url' name='url' autocomplete='url'
+								placeholder="Input any URL"
+								required />
+							<input id='submiturl'
+								type='submit'
+								value='arrow_forward' />
+						</form>
+					</main>
+					<info id='standwithukraine'
+						class='standWithUkraine'
+					>
+						Fasm.ga stands with the Ukranian people against the Russian invasions.
+					</info>
+					<info id='vote for me please ;-;'
+						title='Do you like this design?'
+					>
+						Consider <a href='https://github.com/fasmga/frontend'>
+							contributing on GitHub!
+						</a>
+					</info>
+				</section>
+			</main>
+			<section id='debugging'
+				title='JS Debug'
 			>
 				<main>
-					This is your fga-w3 app.
+					<form id='debug'>
+						<input id='repl'
+							type='text' name='repl'
+							placeholder="Input JS"
+							resizable />
+						<input id='evalrepl'
+							type='submit'
+							value='arrow_forward' />
+					</form>
 				</main>
-				<info id='vote for me please ;-;'
-					title='Do you enjoy fga-w3?'
-				>
-					Consider <a href='https://github.com/fasmga/fga-w3'>
-						contributing on GitHub!
-					</a>
-				</info>
-				<info id='_tip1'
-					title='Tip'
-				>
-					Start editing your website to your liking!<br/>
-					<nav orientation='vertical'>
-						<a href="./index.html"
-							icon='home' title='Landing page'
-						></a>
-						<a href="./content/"
-							icon='description' title='Other pages'
-						></a>
-						<a href="./src/css/"
-							icon='css' title='CSS styles'
-						></a>
-						<a href="./src/js/index.js"
-							icon='javascript' title='Backend scripts'
-						></a>
-					</nav>
-				</info>
+				<code id='result' title='Input any JS code above'>
+					// The evaluated result will be shown here.
+				</code>
 			</section>
-		</main>
-		<section id='debugging'
-			title='JS Debug'
-		>
-			<main>
-				<form id='debug'>
-					<input id='repl'
-						type='text' name='repl'
-						placeholder="Input JS"
-						resizable />
-					<input id='evalrepl'
-						type='submit'
-						value='arrow_forward' />
-				</form>
-			</main>
-			<code id='result' title='Input any JS code above'>
-				// The evaluated result will be shown here.
-			</code>
-		</section>
+			<section id='dashboard'
+				title='Dashboard'
+			>
+				<card title='testù'>
+					This is a Test for Cards
+					<main>
+						<button icon='delete'>Delete</button>
+					</main>
+					<button icon='edit'>Edit</button>
+					<button icon='add'>Add</button>
+				</card>
+			</section>
+			<section id='settings'
+				title='Settings'
+			>
+				<nav orientation='vertical'>
+					<a
+						icon='person' title='Account'
+					></a>
+					<a
+						icon='monitor' title='Appeareance'
+					></a>
+					<a
+						icon='web' title='User experience'
+					></a>
+					<a
+						icon='lock' title='Security'
+					></a>
+					<a
+						icon='code' title='Developer options'
+					></a>
+				</nav>
+			</section>
 
 		<script id='dynamic'
-			src="./res/dynamic.js"
+			src="./res/dynamic.js?date=20220312_1"
 		></script>
 		<script id='debugger'
-			src="./src/js/debugger.js"
+			src="./src/js/debugger.js?date=20220312_1"
 		></script>
 		<script id='main'
-			src="./src/js/index.js"
+			src="./src/js/index.js?date=20220312_1"
 		></script>
 		<script id='pageload'
-			src="./src/js/pageload.js"
+			src="./src/js/pageload.js?date=20220312_1"
 		></script>
 	</body>
 </html>

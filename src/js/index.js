@@ -15,8 +15,15 @@
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
 
 
-// This script will be executed
-// Place your code here!
+let form = $('#shortenlink');
+let urlBox = $('#urlbox');
+
+form.on('submit', (event) => {
+	event.preventDefault();
+	$('main > info')
+	.attr('title', urlBox.val())
+	.text('You inputted a valid URL!');
+});
 
 /* JS debug page code */
 let debugForm = $('#debug');
