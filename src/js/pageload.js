@@ -29,3 +29,19 @@ setTheme('_auto');
 
 /* Automatically move to the user's preferred home page */
 moveTo('_home');
+
+/* Prevent users from finding themselves on a blank page */
+$(window).on('hashchange', () => {
+	// On some browsers, pressing the back button will travel to an empty page,
+	// due to our automatic navigation to the home page
+	// To avoid this we check if the new hash is empty, and if so, send the user
+	// back properly
+	if (section() === '') {
+		// (we go back twice, to avoid going back to where we were even prior)
+		history.go(-2);
+	}
+	// Check if the current page is in the pages list, if not go back home
+	if (!(section() in res.pages)) {
+		moveTo('_home');
+	}
+});
