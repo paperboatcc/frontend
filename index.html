@@ -71,108 +71,98 @@
 				</a>
 				<a
 					href="#newLink"
-					icon='add_link' title='Shorten a link'
+					icon='&#xE71B;' title='Shorten a link'
 				></a>
 				<a
 					href="#debugging"
-					icon='developer_board' title='JS Debug'
+					icon='&#xE943;' title='JS Debug'
 				></a>
 				<a
 					href="#dashboard"
-					icon='dashboard' title='Dashboard'
+					icon='&#xE74C;' title='Dashboard'
 				></a>
 				<a
 					href="#settings"
-					icon='settings' title='Settings'
+					icon='&#xE713;' title='Settings'
 				></a>
 				<a
 					href="https://blog.fasmga.org/"
-					icon='newspaper' title='Blog'
+					icon='&#xE8F3;' title='Blog'
 				></a>
 			</nav>
 		</header>
 
-		<!-- <div class="content"> -->
-			<main>
-				<section id='newLink'
-					title='Shorten a link'
-				>
-					<main>
-						<form id='shortenlink'>
-							<input id='urlbox'
-								type='url' name='url' autocomplete='url'
-								placeholder="Input any URL"
-								required />
-							<input id='submiturl'
-								type='submit'
-								value='arrow_forward' />
-						</form>
-					</main>
-					<info id='standwithukraine'
-						class='standWithUkraine'
-					>
-						Fasm.ga stands with the Ukranian people against the Russian invasions.
-					</info>
-					<info id='vote for me please ;-;'
-						title='Do you like this design?'
-					>
-						Consider <a href='https://github.com/fasmga/frontend'>
-							contributing on GitHub!
-						</a>
-					</info>
-				</section>
-			</main>
-			<section id='debugging'
-				title='JS Debug'
+		<main>
+			<section id='newLink'
+				title='Shorten a link'
 			>
 				<main>
-					<form id='debug'>
-						<input id='repl'
-							type='text' name='repl'
-							placeholder="Input JS"
-							resizable />
-						<input id='evalrepl'
+					<form id='shortenlink'>
+						<input id='urlbox'
+							type='url' name='url' autocomplete='url'
+							placeholder="Input any URL"
+							required />
+						<input id='submiturl'
 							type='submit'
-							value='arrow_forward' />
+							value='&#xE72A;' />
 					</form>
 				</main>
-				<code id='result' title='Input any JS code above'>
-					// The evaluated result will be shown here.
-				</code>
+
+				<info type='recommended'
+					title='Sign in to Fasm.ga and start monetizing'
+				>
+					You don't need to set up adware on your website. Use Fasm.ga to share
+					your content and get access to a suite of free monetization tools
+					<icon class='positive'>&#xECAD;</icon>
+				</info>
 			</section>
-			<section id='dashboard'
-				title='Dashboard'
-			>
-				<card title='testù'>
-					This is a Test for Cards
-					<main>
-						<button icon='delete'>Delete</button>
-					</main>
-					<button icon='edit'>Edit</button>
-					<button icon='add'>Add</button>
-				</card>
-			</section>
-			<section id='settings'
-				title='Settings'
-			>
-				<nav orientation='vertical'>
-					<a
-						icon='person' title='Account'
-					></a>
-					<a
-						icon='monitor' title='Appeareance'
-					></a>
-					<a
-						icon='web' title='User experience'
-					></a>
-					<a
-						icon='lock' title='Security'
-					></a>
-					<a
-						icon='code' title='Developer options'
-					></a>
-				</nav>
-			</section>
+		</main>
+
+		<section id='debugging'
+			title='JS Debug'
+		>
+			<main>
+				<form id='debug'>
+					<input id='repl'
+						type='text' name='repl'
+						placeholder="Input JS"
+						resizable />
+					<input id='evalrepl'
+						type='submit'
+						value='&#xE751;' />
+				</form>
+			</main>
+			<code id='result' title='Input any JS code above'>
+				// The evaluated result will be shown here.
+			</code>
+		</section>
+
+		<section id='dashboard'
+			title='Dashboard'
+		>
+		</section>
+
+		<section id='settings'
+			title='Settings'
+		>
+			<nav orientation='vertical'>
+				<a
+					icon='&#xE910;' title='Account'
+				></a>
+				<a
+					icon='&#xE771;' title='Appeareance'
+				></a>
+				<a
+					icon='&#xF49A;' title='Web experience'
+				></a>
+				<a
+					icon='&#xE72E;' title='Security'
+				></a>
+				<a
+					icon='&#xE756;' title='Developer options'
+				></a>
+			</nav>
+		</section>
 
 		<script id='dynamic'
 			src="./res/dynamic.js?date=20220312_1"
