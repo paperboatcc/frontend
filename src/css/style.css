@@ -13,8 +13,7 @@
 */
 
 /*** Imports ***/
-@import url("./static.css");
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap");
+@import url("static.css");
 
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
 
@@ -33,10 +32,7 @@
 
 	scroll-behavior: smooth;
 	will-change: transition;
-	transition:
-		border var(--style-animation),
-		background var(--style-animation),
-		color var(--style-animation);
+	transition: var(--animation);
 }
 
 html, body {
@@ -46,12 +42,12 @@ html, body {
 	padding: var(--page-padding);
 }
 
-body
-{	background-color: var(--background-10); }
+body {
+	background-color: var(--background-10);
+}
 
 .content {
 	display: grid;
-	/* Fuck it I'm gonna try them all */
 	place-self: center;
 	place-content: center;
 	place-items: center;
@@ -66,6 +62,7 @@ a {
 	color: var(--accent);
 
 	text-decoration: var(--link-text-decoration);
+	cursor: var(--link-cursor);
 
 	will-change: transition;
 	transition: color var(--style-animation);
@@ -170,6 +167,10 @@ section.hidden::before
 /***
 	Additional webpage or stylistic elements
 ***/
+.positive { color: var(--accent); }
+.neutral { color: var(--foreground-20); }
+.negative { color: var(--desert-red-50); }
+
 .logo {
 	font-family: var(--display);
 
@@ -188,18 +189,17 @@ section.hidden::before
 icon,
 nav a::before,
 button[icon]::before {
-	position: relative;
-
-	top: var(--icon-line);
+	vertical-align: var(--icon-alignment);
 
 	font-family: var(--icon);
 	text-decoration: none;
 }
 
-icon.material,
+icon.fluent,
 nav a::before,
 input[type=submit],
-button[icon]::before
+button[icon]::before,
+info.monetization-ad::after
 { font-family: var(--icon); }
 
 info,
@@ -213,16 +213,13 @@ card {
 
 	max-width: var(--max-line-width);
 
+	border: var(--element-border);
 	border-radius: var(--element-corner-radius);
-	box-shadow: var(--element-shadow) var(--overlay-shadow-5);
 
 	background-color: var(--background-10);
 	color: var(--overlay-foreground-5);
 
 	overflow-wrap: break-word;
-
-	will-change: transition;
-	transition: box-shadow var(--style-animation);
 }
 info::before,
 code::before,
@@ -234,6 +231,10 @@ card::before
 	padding-bottom: var(--min-padding);
 }
 
+info[type=recommended]::before,
+code[type=recommended]::before
+{ color: var(--accent); }
+
 info[type=warning]::before,
 code[type=warning]::before
 { color: var(--light-yellow-10); }
@@ -241,31 +242,6 @@ code[type=warning]::before
 info[type=error]::before,
 code[type=error]::before
 { color: var(--desert-red-50); }
-
-info.standWithUkraine {
-	background-color: #0057B7;
-	color: #FFD700;
-}
-info.standWithUkraine::before
-{ content: 'Standing with Ukraine'; }
-
-:is(info, code, card) button
-{ margin-top: var(--standard-padding); }
-
-card {
-	border: var(--background-30);
-	border-radius: var(--section-corner-radius);
-}
-
-header:hover,
-footer:hover,
-info:hover,
-code:hover,
-card:hover {
-	box-shadow: var(--element-shadow) var(--overlay-shadow-10);
-	will-change: transition;
-	transition: box-shadow var(--style-animation);
-}
 
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
 
@@ -282,12 +258,11 @@ header, footer
 	background-color: var(--background-10);
 
 	will-change: transition;
-	transition: box-shadow var(--style-animation);
 }
 header
-{ box-shadow: var(--section-shadow) var(--overlay-shadow-10); }
+{ border-bottom: var(--section-border); }
 footer
-{	box-shadow: var(--section-shadow-upward) var(--overlay-shadow-10); }
+{	border-top: var(--section-border); }
 
 nav
 {
@@ -354,7 +329,7 @@ button[icon]::before
 	margin-right: var(--min-padding);
 }
 
-button:hover, .button:hover, input[type=submit]:hover,
+button:hover, input[type=submit]:hover,
 main button, main > form input[type=submit] {
 	padding: var(--max-padding);
 
@@ -380,7 +355,7 @@ input[type=submit] {
 input:is([type=text], [type=url], [type=email], [type=search], [type=password]) {
 	padding: var(--standard-padding);
 
-	border: var(--max-border) solid var(--foreground-20);
+	border: var(--control-boundary);
 	border-radius: var(--control-corner-radius);
 	outline: none;
 
@@ -395,7 +370,7 @@ input:is([type=text], [type=url], [type=email], [type=search], [type=password]) 
 	transition: border var(--style-animation), font-weight var(--style-animation), color var(--style-animation);
 }
 input:is([type=text], [type=url], [type=email], [type=search], [type=password]):hover {
-	border: var(--max-border) solid var(--accent);
+	border: var(--control-accent-boundary);
 
 	color: var(--accent);
 
