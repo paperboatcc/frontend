@@ -9,7 +9,9 @@ const res = {
 	},
 	"pages": {
 		"home": "#_home",
-		"debugging": "#debugging"
+		"debugging": "#debugging",
+		"dashboard": "#dashboard",
+		"settings": "#settings"
 	},
 	"css": {
 		"colorScheme": "#colorscheme",
