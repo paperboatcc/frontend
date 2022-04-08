@@ -63,15 +63,9 @@ a {
 
 	text-decoration: var(--link-text-decoration);
 	cursor: var(--link-cursor);
-
-	will-change: transition;
-	transition: color var(--style-animation);
 }
 a:hover {
 	color: var(--charmga-accent-80);
-
-	will-change: transition;
-	transition: color var(--style-animation);
 }
 
 b,
@@ -175,15 +169,9 @@ section.hidden::before
 	font-family: var(--display);
 
 	color: var(--foreground-20);
-
-	will-change: transition;
-	transition: color var(--style-animation);
 }
 .logo:hover {
 	color: var(--accent);
-
-	will-change: transition;
-	transition: color var(--style-animation);
 }
 
 icon,
@@ -256,8 +244,6 @@ header, footer
 	z-index: var(--on-top);
 
 	background-color: var(--background-10);
-
-	will-change: transition;
 }
 header
 { border-bottom: var(--section-border); }
@@ -315,9 +301,6 @@ button, input[type=submit] {
 	color: var(--background-10);
 
 	cursor: pointer;
-
-	will-change: transition;
-	transition: padding var(--layout-animation), font-weight var(--style-animation), border-radius var(--style-animation), background-color var(--style-animation);
 }
 button
 { font-family: var(--monospace); }
@@ -336,9 +319,6 @@ main button, main > form input[type=submit] {
 	font-weight: var(--bold);
 
 	background-color: var(--accent);
-
-	will-change: transition;
-	transition: padding var(--layout-animation), font-weight var(--style-animation), border-radius var(--style-animation), background-color var(--style-animation);
 }
 main button:hover, main > form input[type=submit]:hover
 { background-color: var(--charmga-accent-80); }
@@ -365,16 +345,11 @@ input:is([type=text], [type=url], [type=email], [type=search], [type=password]) 
 
 	background-color: var(--transparency);
 	color: var(--foreground-10);
-
-	will-change: transition;
-	transition: border var(--style-animation), font-weight var(--style-animation), color var(--style-animation);
 }
 input:is([type=text], [type=url], [type=email], [type=search], [type=password]):hover {
 	border: var(--control-accent-boundary);
 
 	color: var(--accent);
-
-	transition: border var(--style-animation), font-weight var(--style-animation), color var(--style-animation);
 }
 
 nav a {
@@ -388,9 +363,6 @@ nav a {
 	white-space: var(--no-wrap);
 
 	cursor: var(--link-cursor);
-
-	will-change: transition;
-	transition: color var(--style-animation);
 }
 nav a::before
 { content: attr(icon); }
