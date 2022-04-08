@@ -34,6 +34,9 @@
 	--standard-padding: 8px;
 	--max-padding: 12px;
 
+	--grid-columns: repeat(auto-fill, minmax(fit-content, 0));
+	--grid-gaps: var(--standard-padding);
+
 	--size-offset-10: 4px;
 	--size-offset-20: 8px;
 	--responsive-width: max(100%, 50%);
@@ -97,7 +100,7 @@
 
 	--transparency: transparent;
 
-	--animation: all 250ms ease;
+	--animation: 350ms ease;
 }
 @media (prefers-reduced-motion) {
 	:root {
