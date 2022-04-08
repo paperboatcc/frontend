@@ -23,6 +23,3 @@ let changeUI =()=> { setUI([
 ]); };
 changeUI();
 $(window).on('resize', changeUI);
-
-/* Dynamic theming based on user's system preferences */
-setTheme('_auto');

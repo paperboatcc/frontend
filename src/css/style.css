@@ -13,6 +13,8 @@
 */
 
 /*** Imports ***/
+@import url('theme/dark.css');
+@import url('theme/light.css') (prefers-color-scheme: light);
 @import url("static.css");
 
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
@@ -40,17 +42,26 @@ html, body {
 
 	margin: var(--page-padding);
 	padding: var(--page-padding);
+
+	height: 100%;
 }
 
 body {
-	background-color: var(--background-10);
+	display: grid;
+	grid-template-areas:
+		'header'
+		'content';
+	grid-template-rows:
+		min-content 1fr;
+
+	background: var(--background-10);
 }
 
 .content {
 	display: grid;
-	place-self: center;
+	grid-area: content;
+
 	place-content: center;
-	place-items: center;
 }
 
 .grid {
@@ -189,7 +200,8 @@ section.hidden::before
 
 icon,
 nav a::before,
-button[icon]::before {
+button[icon]::before,
+::marker {
 	vertical-align: var(--icon-alignment);
 
 	font-family: var(--icon);
@@ -200,7 +212,7 @@ icon.fluent,
 nav a::before,
 input[type=submit],
 button[icon]::before,
-info.monetization-ad::after
+::marker
 { font-family: var(--icon); }
 
 info,
@@ -208,7 +220,7 @@ code,
 card {
 	display: inline-block;
 
-	margin: var(--standard-padding);
+	margin-block: var(--standard-padding);
 	padding: var(--max-padding);
 	z-index: var(--in-between);
 
@@ -262,6 +274,9 @@ header
 { border-bottom: var(--section-border); }
 footer
 {	border-top: var(--section-border); }
+body > header {
+	grid-area: header;
+}
 
 nav
 {
@@ -290,6 +305,19 @@ footer nav {
 	border-radius: 0;
 
 	text-align: center;
+}
+
+details > summary > * {
+	display: inline-block;
+}
+details > summary {
+	list-style: none;
+}
+details > summary::marker {
+	content: '\E70D  ';
+}
+details[open] > summary::marker {
+	content: '\E70E  ';
 }
 
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
