@@ -131,12 +131,9 @@ section {
 	scroll-behavior: smooth;
 }
 
-main section, section:target, section:target section
-{ display: grid; }
-@supports selector(:target-within) {
-	section:target-within
-	{ display: grid; }
-}
+main section, section:target, section:target section,
+section.home
+{ display: grid !important; }
 section:not(:target)
 { display: none; }
 
