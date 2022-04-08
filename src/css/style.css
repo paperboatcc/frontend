@@ -52,6 +52,14 @@ body {
 	place-content: center;
 	place-items: center;
 }
+
+.grid {
+	display: grid;
+}
+
+.flex {
+	display: flex;
+}
 			
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
 
@@ -117,9 +125,7 @@ img {
 	Styles for website pages and sections, designed for fast page navigation
 ***/
 section {
-	grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-	grid-column-gap: var(--standard-padding);
-	grid-row-gap: var(--standard-padding);
+	gap: var(--grid-gaps);
 	place-items: center;
 	place-self: center;
 
@@ -131,14 +137,24 @@ section {
 	scroll-behavior: smooth;
 }
 
-main section, section:target, section:target section,
-section.home
-{ display: grid !important; }
 section:not(:target)
 { display: none; }
+section:target, section.home,
+section:target section, section.home section {
+	display: grid;
+
+	animation: appear var(--animation) forwards;
+}
+
+@keyframes appear {
+	from {
+		opacity: 0;
+	} to {
+		opacity: 1;
+	}
+}
 
 section::before {
-	display: block;
 	content: attr(title);
 
 	line-height: var(--title-height);
@@ -263,8 +279,6 @@ nav[orientation=horizontal] {
 	overflow-x: auto;
 }
 nav[orientation=vertical] {
-	display: inline-block;
-
 	line-height: var(--vertical-nav-padding);
 
 	overflow-y: auto;
@@ -283,6 +297,11 @@ footer nav {
 /***
 	Interactive user controls: buttons, inputs and forms
 ***/
+form {
+	display: flex;
+	column-gap: var(--min-padding);
+}
+
 button, input[type=submit] {
 	display: inline-block;
 	vertical-align: top;
@@ -311,10 +330,6 @@ button[icon]::before
 
 button:hover, input[type=submit]:hover,
 main button, main > form input[type=submit] {
-	padding: var(--max-padding);
-
-	font-weight: var(--bold);
-
 	background-color: var(--accent);
 }
 main button:hover, main > form input[type=submit]:hover
@@ -326,7 +341,6 @@ input[type=submit] {
 	padding: var(--max-padding);
 
 	font-size: var(--icon-button-size);
-	font-weight: var(--bold);
 }
 
 input:is([type=text], [type=url], [type=email], [type=search], [type=password]) {
