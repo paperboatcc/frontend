@@ -148,14 +148,12 @@ section {
 	scroll-behavior: smooth;
 }
 
-section:not(:target),
-section.target ~ section.home
-{ display: none; }
-section:target, section.home,
-section:target section, section.home section {
-	display: grid;
-
-	animation: appear var(--animation) forwards;
+/* Hacky solution but I can get away with it for now */
+section, section:target ~ main > section  {
+  display: none;
+}
+main > section, section:target {
+  display: grid;
 }
 
 @keyframes appear {
@@ -175,11 +173,6 @@ section[title]::before
 { content: attr(title); }
 section[subtitle]::before
 { content: attr(subtitle); }
-
-section.hidden
-{ display: none; }
-section.hidden::before
-{ display: block; }
 
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
 
