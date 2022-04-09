@@ -13,9 +13,9 @@
 */
 
 /*** Imports ***/
-@import url('theme/dark.css');
-@import url('theme/light.css') (prefers-color-scheme: light);
-@import url("static.css");
+@import url('./theme/dark.css');
+@import url('./theme/light.css') (prefers-color-scheme: light);
+@import url("./static.css");
 
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
 
@@ -148,7 +148,8 @@ section {
 	scroll-behavior: smooth;
 }
 
-section:not(:target)
+section:not(:target),
+section.target ~ section.home
 { display: none; }
 section:target, section.home,
 section:target section, section.home section {

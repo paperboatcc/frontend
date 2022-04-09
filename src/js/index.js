@@ -29,12 +29,14 @@ form.on('submit', (event) => {
 let debugForm = $('#debug');
 let repl = $('#repl');
 
-debugForm.on('submit', (event) => {
+debugForm.on('input', (event) => {
 	event.preventDefault();
 	debug(
-		repl.val(), (result, error)=>{
+		repl.val(), (result, error)=> {
 			let info_type = error ? 'error' : 'info';
 			let info_title = error ? error.constructor.name : repl.val();
+			let repl_color = error ? 'var(--desert-red-80)' : 'var(--accent)';
+			repl.css('color', repl_color);
 			$('#result')
 			.attr('type', info_type)
 			.attr('title', info_title)

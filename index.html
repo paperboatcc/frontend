@@ -32,31 +32,31 @@
 
 	<body>
 		<script id='jquery'
-			src="https://code.jquery.com/jquery-3.6.0.min.js?20220408_3"
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
 			integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
 			crossorigin="anonymous"
 		></script>
 
 		<script id='resources'
-			src="./res/index.js?20220408_3"
+			src="./res/index.js"
 		></script>
 		<script id='defaults'
-			src="./content/byUser/defaults.js?20220408_3"
+			src="./content/byUser/defaults.js"
 		></script>
 		<script id='usersettings'
-			src="./content/byUser/settings.js?20220408_3"
+			src="./content/byUser/settings.js"
 		></script>
 
 		<link id='style'
 			rel='stylesheet'
-			href="./src/css/style.css?20220408_3" />
+			href="./src/css/style.css" />
 
 		<link id='favicon'
 			rel='icon'
 			href="./res/raster/favicon.ico" />
 
 		<script id='utils'
-			src="./src/js/utils.js?20220408_3"
+			src="./src/js/utils.js"
 		></script>
 
 		<header>
@@ -90,50 +90,20 @@
 		</header>
 
 		<div class="content">
-			<main>
-				<section id='newLink' class='home'
-					title='Shorten a link'
-				>
-					<main>
-						<form id='shortenlink'>
-							<input id='urlbox'
-								type='url' name='url' autocomplete='url'
-								placeholder='Input any URL'
-								required />
-							<input id='submiturl'
-								type='submit'
-								value='&#xE72A;' />
-						</form>
-					</main>
-
-					<details>
-						<summary><h3>Customize</h3></summary>
-
-						<form id='customizelink'>
-							<input id='linkpassword'
-								type='password' name='password'
-								placeholder='Password' />
-						</form>
-					</details>
-				</section>
-			</main>
-
 			<section id='debugging'
 				title='JS Debug'
 			>
-				<main>
-					<form id='debug'>
-						<input id='repl'
-							type='text' name='repl'
-							placeholder="Input JS"
-							resizable />
-						<input id='evalrepl'
-							type='submit'
-							value='&#xE751;' />
-					</form>
-				</main>
-				<code id='result' title='Input any JS code above'>
-					// The evaluated result will be shown here.
+				<form id='debug'>
+					<input id='repl'
+						type='text' name='repl'
+						placeholder="Input JS"
+						resizable />
+					<input id='evalrepl'
+						type='submit'
+						value='&#xE751;' />
+				</form>
+				<code id='result' title='Try out JavaScript code'>
+					// Result
 				</code>
 			</section>
 
@@ -165,19 +135,47 @@
 					</nav>
 				</div>
 			</section>
+
+			<main>
+				<section id='newLink' class='home'
+					title='Shorten a link'
+				>
+					<main>
+						<form id='shortenlink'>
+							<input id='urlbox'
+								type='url' name='url' autocomplete='url'
+								placeholder='Input any URL'
+								required />
+							<input id='submiturl'
+								type='submit'
+								value='&#xE72A;' />
+						</form>
+					</main>
+
+					<details>
+						<summary><h3>Customize</h3></summary>
+
+						<form id='customizelink'>
+							<input id='linkpassword'
+								type='password' name='password'
+								placeholder='Password' />
+						</form>
+					</details>
+				</section>
+			</main>
 		</div>
 
 		<script id='dynamic'
-			src="./res/dynamic.js?20220408_3"
+			src="./res/dynamic.js"
 		></script>
 		<script id='debugger'
-			src="./src/js/debugger.js?20220408_3"
+			src="./src/js/debugger.js"
 		></script>
 		<script id='main'
-			src="./src/js/index.js?20220408_3"
+			src="./src/js/index.js"
 		></script>
 		<script id='pageload'
-			src="./src/js/pageload.js?20220408_3"
+			src="./src/js/pageload.js"
 		></script>
 	</body>
 </html>

@@ -17,12 +17,7 @@
 
 function debug(
 	expr,
-	handler = (response, error) => {
-		return {
-			response: response,
-			error: error ?? null
-		};
-	}
+	then =(response, error)=> {}
 ) {
 	let result, error;
 	try {
@@ -36,6 +31,6 @@ function debug(
 		error = e;
 	} finally {
 		// 2— Call the handler function, with the proper arguments.
-		handler(result, error);
+		then(result, error);
 	}
 }

@@ -4,7 +4,7 @@
 const res = {
 	"html": {
 		"_index": "index.html",
-		"index": "./index.html",
+		"index": "index.html",
 		"navbar": "#navbar"
 	},
 	"pages": {
@@ -30,7 +30,7 @@ const res = {
 	"js": {
 		"utils": "./src/js/utils.js",
 		"main": "./src/js/index.js",
-		"pageload": "./src/js/pageload.js"
+		"debugger": "./src/js/debugger.js"
 	},
 	"data": {
 		"settings": "./content/byUser/settings.json",
