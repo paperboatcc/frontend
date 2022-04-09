@@ -17,12 +17,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=auto");
 @font-face {
 	font-family: 'JetBrains Mono NF';
-	src: url("../../res/fonts/JB_Mono_NF.ttf?1");
+	src: url("../../res/fonts/JB_Mono_NF.ttf?M3");
 	font-display: auto;
 }
 @font-face {
 	font-family: 'Segoe Fluent Icons';
-	src: url("../../res/fonts/Segoe_Fluent_Icons.ttf?1"), ;
+	src: url("../../res/fonts/Segoe_Fluent_Icons.ttf?M3"), ;
 	/* unicode-range: U+E700-F800; */
 	font-display: auto;
 }

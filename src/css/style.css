@@ -13,9 +13,9 @@
 */
 
 /*** Imports ***/
-@import url("./theme/dark.css?1");
-@import url("./theme/light.css?1") (prefers-color-scheme: light);
-@import url("./static.css?1");
+@import url("./theme/dark.css?M3");
+@import url("./theme/light.css?M3") (prefers-color-scheme: light);
+@import url("./static.css?M3");
 
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
 
