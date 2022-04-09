@@ -150,17 +150,29 @@ section {
 
 /* Hacky solution but I can get away with it for now */
 section, section:target ~ main > section  {
-  display: none;
+	display: none;
 }
 main > section, section:target {
-  display: grid;
+	display: grid;
+	animation: slide-in var(--animation) forwards alternate;
 }
 
-@keyframes appear {
-	from {
+@keyframes slide-in {
+	0% {
 		opacity: 0;
-	} to {
+		transform: translateX(-100%);
+	} 100% {
 		opacity: 1;
+		transform: none;
+	}
+}
+@keyframes slide-out {
+	0% {
+		opacity: 1;
+		transform: none;
+	} 100% {
+		opacity: 0;
+		transform: translateX(100%);
 	}
 }
 
