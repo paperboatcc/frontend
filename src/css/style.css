@@ -6,9 +6,9 @@
 */
 
 /*** Imports ***/
-@import url("./theme/dark.css?M3.2");
-@import url("./theme/light.css?M3.2") (prefers-color-scheme: light);
-@import url("./static.css?M3.2");
+@import url("./theme/dark.css?M3.3");
+@import url("./theme/light.css?M3.3") (prefers-color-scheme: light);
+@import url("./static.css?M3.3");
 
 
 /***
@@ -21,7 +21,6 @@
 	line-height: var(--default-line-height);
 
 	color: var(--foreground-10);
-	accent-color: var(--accent);
 
 	scroll-behavior: smooth;
 	will-change: transition;
@@ -80,8 +79,7 @@ a:hover {
 
 b,
 info::before,
-code::before,
-card::before
+code::before
 {
 	font-weight: var(--bold);
 	letter-spacing: var(--bold-letter-spacing);
@@ -94,8 +92,7 @@ h1, .display {
 
 h2, .headline,
 section::before,
-main > info::before,
-main > card::before
+main > info::before
 {
 	font-family: var(--headline);
 	font-size: var(--headline-size);
@@ -179,10 +176,12 @@ section::before {
 
 	line-height: var(--title-height);
 }
-section[title]::before
-{ content: attr(title); }
-section[subtitle]::before
-{ content: attr(subtitle); }
+section[title]::before {
+	content: attr(title);
+}
+section[subtitle]::before {
+	content: attr(subtitle);
+}
 
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
 
@@ -220,8 +219,7 @@ button[icon]::before,
 { font-family: var(--icon); }
 
 info,
-code,
-card {
+code {
 	display: inline-block;
 
 	margin-block: var(--standard-padding);
@@ -239,26 +237,27 @@ card {
 	overflow-wrap: break-word;
 }
 info::before,
-code::before,
-card::before
-{
+code::before {
 	display: block;
 	content: attr(title);
 
 	padding-bottom: var(--min-padding);
 }
 
-info[type=recommended]::before,
-code[type=recommended]::before
-{ color: var(--accent); }
+info.recommended::before,
+code.recommended::before {
+	color: var(--accent);
+}
 
-info[type=warning]::before,
-code[type=warning]::before
-{ color: var(--light-yellow-10); }
+info.warning::before,
+code.warning::before {
+	color: var(--light-yellow-10)
+}
 
-info[type=error]::before,
-code[type=error]::before
-{ color: var(--desert-red-50); }
+info.error::before,
+code.error::before {
+ color: var(--desert-red-50);
+}
 
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
 
@@ -274,16 +273,17 @@ header, footer
 
 	background-color: var(--background-10);
 }
-header
-{ border-bottom: var(--section-border); }
-footer
-{	border-top: var(--section-border); }
+header {
+	border-bottom: var(--section-border);
+}
+footer {
+	border-top: var(--section-border);
+}
 body > header {
 	grid-area: header;
 }
 
-nav
-{
+nav {
 	padding: var(--standard-padding);
 
 	border-radius: var(--section-corner-radius);
@@ -311,16 +311,26 @@ footer nav {
 	text-align: center;
 }
 
-details > summary > * {
+.accordion, .accordion.closed {
+	max-height: 0;
+	overflow: hidden;
+}
+.accordion.open, .accordion:target {
+	max-height: fit-content;
+}
+
+summary > * {
 	display: inline-block;
 }
-details > summary {
+summary {
 	list-style: none;
+	cursor: var(--link-cursor);
 }
-details > summary::marker {
+summary::before {
 	content: '\E70D  ';
 }
-details[open] > summary::marker {
+[open] > summary::before,
+summary:hover::before {
 	content: '\E70E  ';
 }
 
@@ -355,10 +365,12 @@ button, input[type=submit] {
 	background-color: var(--foreground-20);
 	color: var(--background-10);
 
-	cursor: pointer;
+	cursor: var(--link-cursor);
+	-webkit-appearance: none;
 }
-button
-{ font-family: var(--monospace); }
+button {
+	font-family: var(--monospace);
+}
 
 button[icon]::before
 {
@@ -369,20 +381,29 @@ button[icon]::before
 
 button:hover, input[type=submit]:hover,
 main button, main > form input[type=submit] {
+	border: none;
 	background-color: var(--accent);
+	color: var(--background-10);
 }
-main button:hover, main > form input[type=submit]:hover
-{ background-color: var(--charmga-accent-80); }
+main button:hover, main > form input[type=submit]:hover {
+	background-color: var(--charmga-accent-80);
+}
 
-main > form input:is([type=text], [type=url], [type=email], [type=search], [type=password])
-{ border-color: var(--accent); }
+main > form input:not([type=submit]) {
+	border-color: var(--accent);
+}
 input[type=submit] {
 	padding: var(--max-padding);
 
 	font-size: var(--icon-button-size);
+
+	color: var(--background-10);
+}
+main > form input:not([type=submit]):hover {
+	border-color: var(--charmga-accent-80);
 }
 
-input:is([type=text], [type=url], [type=email], [type=search], [type=password]) {
+input:not([type=submit]) {
 	padding: var(--standard-padding);
 
 	border: var(--control-boundary);
@@ -396,7 +417,7 @@ input:is([type=text], [type=url], [type=email], [type=search], [type=password]) 
 	background-color: var(--transparency);
 	color: var(--foreground-10);
 }
-input:is([type=text], [type=url], [type=email], [type=search], [type=password]):hover {
+input:not([type=submit]):hover {
 	border: var(--control-accent-boundary);
 
 	color: var(--accent);
@@ -414,15 +435,18 @@ nav a {
 
 	cursor: var(--link-cursor);
 }
-nav a::before
-{ content: attr(icon); }
-nav a::after
-{ content: var(--text-spacing) attr(title); }
+nav a::before {
+	content: attr(icon);
+}
+nav a::after {
+	content: var(--text-spacing) attr(title);
+}
 @media only screen and (max-width: 800px) {
 	nav a::after {
 		display: none;
 		content: attr(title);
 	}
 }
-nav[orientation=vertical] a
-{ display: block; }
+nav[orientation=vertical] a {
+	display: block;
+}
