@@ -6,9 +6,9 @@
 */
 
 /*** Imports ***/
-@import url("./theme/dark.css?M3.1");
-@import url("./theme/light.css?M3.1") (prefers-color-scheme: light);
-@import url("./static.css?M3.1");
+@import url("./theme/dark.css?M3.2");
+@import url("./theme/light.css?M3.2") (prefers-color-scheme: light);
+@import url("./static.css?M3.2");
 
 
 /***
