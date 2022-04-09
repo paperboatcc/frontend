@@ -23,7 +23,7 @@
 @font-face {
 	font-family: 'Segoe Fluent Icons';
 	src: url("../../res/fonts/Segoe_Fluent_Icons.ttf?1"), ;
-	unicode-range: U+E700-F800;
+	/* unicode-range: U+E700-F800; */
 	font-display: auto;
 }
 
