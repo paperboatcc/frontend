@@ -13,8 +13,8 @@
 */
 
 /*** Imports ***/
-@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=auto");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=auto");
 @font-face {
 	font-family: 'JetBrains Mono NF';
 	src: url("../../res/fonts/JB_Mono_NF.ttf");
@@ -22,7 +22,9 @@
 }
 @font-face {
 	font-family: 'Segoe Fluent Icons';
-	src: url("../../res/fonts/Segoe_Fluent_Icons.ttf");
+	src: url("../../res/fonts/Segoe_Fluent_Icons.ttf"), ;
+	unicode-range: U+E700-F800;
+	font-display: auto;
 }
 
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
@@ -75,7 +77,7 @@
 
 	--separator-thickness: 0.5px;
 
-	--text: 'Rubik'; --text-size: 1rem; --bold-letter-spacing: 0.1ch;
+	--text: var(--icon), 'Rubik'; --text-size: 1rem; --bold-letter-spacing: 0.1ch;
 	--logo: var(--display); --logo-size: 4rem;
 	--display: 'Poppins'; --display-size: 3rem;
 	--headline: var(--monospace); --headline-size: 2rem; --title-height: 4rem;
