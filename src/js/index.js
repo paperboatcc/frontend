@@ -20,9 +20,14 @@ let urlBox = $('#urlbox');
 
 form.on('submit', (event) => {
 	event.preventDefault();
-	$('main > info')
-	.attr('title', urlBox.val())
-	.text('You inputted a valid URL!');
+	$('#newLink')
+	.append(
+`<info id='linknotice'
+	title='${urlBox.val()}'
+>
+	The inputted URL is valid.
+</info>`
+	);
 });
 
 /* JS debug page code */
