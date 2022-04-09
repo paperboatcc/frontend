@@ -12,6 +12,11 @@ function go(href) {
 	return href;
 }
 
+/* Refresh the page */
+function refresh() {
+	go('');
+}
+
 /* Handling screen sizes */
 let screenSmallerThan =(size) => {
 	return window.matchMedia(
@@ -22,18 +27,6 @@ let screenLargerThan =(size) => {
 	return window.matchMedia(
 		`only screen and (min-width: ${size}px)`
 	).matches;
-}
-
-/* Get or set the value a CSS style variable */
-function css(name, value = null) {
-	// Check if the name starts with -- (the CSS property prefix)
-	// if it doesn't, prepend it automatically
-	if (!name.startsWith('--')) { name = `--${name}`; }
-
-	// If specified, change the variable's value
-	if (value !== null) return root().css(name, value);
-	// Else return the value using jQuery
-	return $(':root').css(name);
 }
 
 /* Move to a specific section of the website */
@@ -48,4 +41,16 @@ function moveTo(page) {
 
 	// Move to the specified section; it just adds #section to the URL
 	window.location.hash = path;
+}
+
+/* Get or set the value a CSS style variable */
+function css(name, value = null) {
+	// Check if the name starts with -- (the CSS property prefix)
+	// if it doesn't, prepend it automatically
+	if (!name.startsWith('--')) { name = `--${name}`; }
+
+	// If specified, change the variable's value
+	if (value !== null) return $(':root').css(name, value);
+	// Else return the value using jQuery
+	return $(':root').css(name);
 }

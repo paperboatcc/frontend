@@ -6,9 +6,9 @@
 */
 
 /*** Imports ***/
-@import url("./theme/dark.css?M3");
-@import url("./theme/light.css?M3") (prefers-color-scheme: light);
-@import url("./static.css?M3");
+@import url("./theme/dark.css?M3.1");
+@import url("./theme/light.css?M3.1") (prefers-color-scheme: light);
+@import url("./static.css?M3.1");
 
 
 /***
@@ -35,6 +35,8 @@ html, body {
 	padding: var(--page-padding);
 
 	height: 100%;
+
+	background: var(--background-10);
 }
 
 body {
@@ -44,8 +46,6 @@ body {
 		'content';
 	grid-template-rows:
 		min-content 1fr;
-
-	background: var(--background-10);
 }
 
 .content {
@@ -322,6 +322,13 @@ details > summary::marker {
 }
 details[open] > summary::marker {
 	content: '\E70E  ';
+}
+
+.screensaver {
+	width: 100vw;
+	height: 100vh;
+
+	background: black;
 }
 
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
