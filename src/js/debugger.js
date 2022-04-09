@@ -1,18 +1,9 @@
 /*
-		 _____
-		|  ___|_ _ ___ _ __ ___    __ _  __ _
-		| |_ / _` / __| '_ ` _ \  / _` |/ _` |
-		|  _| (_| \__ \ | | | | || (_| | (_| |
-		|_|  \__,_|___/_| |_| |_(_)__, |\__,_|
-															|___/
-	
 	-> Name: debugger.js
 	-> Description: Scripts and functions to help in debugging
 	-> Resource: /src/js/debugger.js
 	-> Licensing: GPLv3 | © 2022, Fasm.ga
 */
-
-/*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
 
 
 function debug(
