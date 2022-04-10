@@ -6,14 +6,11 @@
 */
 
 /*** Imports ***/
-@import url("./theme/dark.css?M3.3");
-@import url("./theme/light.css?M3.3") (prefers-color-scheme: light);
-@import url("./static.css?M3.3");
+@import url("./theme/dark.css?M3.4");
+@import url("./theme/light.css?M3.4") (prefers-color-scheme: light);
+@import url("./static.css?M3.4");
 
 
-/***
-	The following rules apply to every element on the screen
-***/
 * {
 	font-family: var(--text);
 	font-size: var(--text-size);
@@ -47,7 +44,7 @@ body {
 		min-content 1fr;
 }
 
-.content {
+body > main {
 	display: grid;
 	grid-area: content;
 
@@ -144,10 +141,10 @@ section {
 }
 
 /* Hacky solution but I can get away with it for now */
-section, section:target ~ main > section  {
+section, section:target ~ section.home  {
 	display: none;
 }
-main > section, section:target {
+section.home, section:target {
 	display: grid;
 	animation: slide-in var(--animation) forwards alternate;
 }
@@ -442,7 +439,7 @@ nav a::after {
 	content: var(--text-spacing) attr(title);
 }
 @media only screen and (max-width: 800px) {
-	nav a::after {
+	header nav a::after {
 		display: none;
 		content: attr(title);
 	}

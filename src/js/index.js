@@ -6,54 +6,28 @@
 */
 
 
-let form = $('#shortenlink');
+let form = $('#newlink');
 let urlBox = $('#urlbox');
 
 form.on('submit', (event) => {
 	event.preventDefault();
-	$('#newLink')
+	$('.home')
 	.append(
-`<info id='linknotice'
-	title='${urlBox.val()}'
->
-	The inputted URL is valid.
-</info>`
+	`<info id='linknotice'
+		title='${urlBox.val()}'
+	>
+		You entered a valid URL: ${urlBox.val()}<br/>
+		URL shortening will be functional in M4. Sorry for the wait!
+	</info>`
 	);
 });
 
 urlBox.on('invalid', (event) => {
-	switch (urlBox.val()) {
-		case '2+3': {
-			event.preventDefault();
-			go("https://billwurtz.com/2plus3.mp4");
-			break;
-		}
-
-		case 'do a barrel roll': {
-			event.preventDefault();
-			if (css('animation') != 0) { css('animation', '1s') }
-			$('body').css('transform', 'rotate(360deg)');
-			break;
-		}
-		
-		case 'dvd': {
-			event.preventDefault();
-			$('body').html($('#credits').prop('outerHTML'));
-			$('#credits')
-			.wrap(
-`<marquee id='screensaver' class='screensaver'
-	direction='down' behavior='alternate'
->
-	<marquee behavior='alternate'>
-	</marquee>
-</marquee>`
-			);
-
-			$('body').on('keydown', () => {
-				refresh();
-			});
-			break;
-		}
+	let formattedURL = `http://${urlBox.val()}`;
+	if ( isValidURL(formattedURL) ) {
+		event.preventDefault();
+		urlBox.val(formattedURL);
+		form.submit();
 	}
 });
 
@@ -65,13 +39,13 @@ debugForm.on('input', (event) => {
 	event.preventDefault();
 	debug(
 		repl.val(), (result, error)=> {
-			let info_type = error ? 'error' : 'info';
-			let info_title = error ? error.constructor.name : repl.val();
-			let repl_color = error ? 'var(--desert-red-80)' : 'var(--accent)';
-			repl.css('color', repl_color);
+			let infoType = error ? 'error' : 'info';
+			let infoTitle = error ? error.constructor.name : repl.val();
+			let replColor = error ? 'var(--desert-red-80)' : 'var(--accent)';
+			repl.css('color', replColor);
 			$('#result')
-			.attr('type', info_type)
-			.attr('title', info_title)
+			.attr('type', infoType)
+			.attr('title', infoTitle)
 			.text(result);
 		}
 	);
