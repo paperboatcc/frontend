@@ -21,7 +21,7 @@
 		</title>
 	</head>
 	
-	<script id='jquery'
+	<script id='jquery' async
 		src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
 		crossorigin="anonymous"
@@ -90,7 +90,7 @@
 		</main>
 	</body>
 
-	<script>
+	<script async>
 		$('header')
 		.load("./content/pages/header.html");
 		$('#dashboard')
@@ -102,13 +102,13 @@
 	<script id='dynamic'
 		src="./res/dynamic.js?M3.4"
 	></script>
-	<script id='debugger'
+	<script id='debugger' defer
 		src="./src/js/debugger.js?M3.4"
 	></script>
 	<script id='main'
 		src="./src/js/index.js?M3.4"
 	></script>
-	<script
+	<script defer
 		src="./src/js/printer.js?M3.4"
 	></script>
 </html>
