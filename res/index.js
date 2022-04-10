@@ -7,8 +7,7 @@ let markup = {
 };
 let pages = {
 	_home: '#_home',
-	home: this.newLink,
-	newLink: '#newLink',
+	home: this._home,
 	debugging: '#debugging',
 	dashboard: '#dashboard',
 	settings: '#settings'
@@ -25,8 +24,4 @@ let scripts = {
 	util: "./src/js/utils.js",
 	main: "./src/js/index.js",
 	debug: "./src/js/debugger.js"
-};
-let data = {
-	userSettings: "./content/byUser/settings.js",
-	defaults: "./content/byUser/defaults.js"
 };
