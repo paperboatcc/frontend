@@ -6,9 +6,9 @@
 */
 
 /*** Imports ***/
-@import url("./theme/dark.css?M3.4");
-@import url("./theme/light.css?M3.4") (prefers-color-scheme: light);
-@import url("./static.css?M3.4");
+@import url("./theme/dark.css?M3.5");
+@import url("./theme/light.css?M3.5") (prefers-color-scheme: light);
+@import url("./static.css?M3.5");
 
 
 * {
@@ -241,6 +241,11 @@ code::before {
 	padding-bottom: var(--min-padding);
 }
 
+info.link-card::before {
+	content: 'fga.sh/' attr(link);
+	color: var(--accent);
+}
+
 info.recommended::before,
 code.recommended::before {
 	color: var(--accent);
@@ -253,8 +258,9 @@ code.warning::before {
 
 info.error::before,
 code.error::before {
- color: var(--desert-red-50);
+	color: var(--desert-red-50);
 }
+
 
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
 
@@ -366,7 +372,10 @@ button, input[type=submit] {
 	-webkit-appearance: none;
 }
 button {
+	display: inline-block;
+	
 	font-family: var(--monospace);
+	vertical-align: middle;
 }
 
 button[icon]::before
@@ -433,15 +442,11 @@ nav a {
 	cursor: var(--link-cursor);
 }
 nav a::before {
-	content: attr(icon);
-}
-nav a::after {
-	content: var(--text-spacing) attr(title);
+	content: attr(icon) var(--text-spacing);
 }
 @media only screen and (max-width: 800px) {
-	header nav a::after {
-		display: none;
-		content: attr(title);
+	header nav a {
+		font-size: 0;
 	}
 }
 nav[orientation=vertical] a {
