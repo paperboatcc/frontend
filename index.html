@@ -2,113 +2,126 @@
 	-> Name: index.html
 	-> Description: Landing page for https://www.fasmga.org/
 	-> Resource: /index.html
-	-> Licensing: © 2022, Fasm.ga | https://www.fasmga.org/license
+	-> Licensing: © 2022, Fasm.ga | GNU General Public License (GPL) v3 — https://www.fasmga.org/license
 -->
 
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta id='charset'
-			charset="utf-8" />
-		<meta id='viewport'
-			name='viewport'
-			content="width=device-width, initial-scale=1.0" />
-		<meta id='metaData'
-			title="Fasm.ga — The FOSS URL Shortener" />
-		<title id='pageTitle'>
-			Fasm.ga
-		</title>
-	</head>
-	
-	<script id='jquery' async
-		src="https://code.jquery.com/jquery-3.6.0.min.js"
-		integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
-		crossorigin="anonymous"
-	></script>
+<head>
+	<meta charset="UTF-8" />
+	<meta name='viewport'
+		content="width=device-width, initial-scale=1.0" />
+	<meta title="Fasm.ga — The FOSS URL Shortener" />
+	<meta name='description'
+		content="" />
+	<title>Fasm.ga</title>
+</head>
 
-	<script id='res'
-		src="./res/index.js?M3.4"
-	></script>
+<script id='jquery'
+	src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+	crossorigin="anonymous"
+></script>
 
-	<link id='style'
-		rel='stylesheet'
-		href="./src/css/style.css?M3.4" />
+<script id='res' async
+	src="./res/index.js?M3.5"
+></script>
 
-	<link id='favicon'
-		rel='icon'
-		href="./res/raster/favicon.ico?M3.4" />
+<link id='style'
+	rel='stylesheet'
+	href="./src/css/style.css?M3.5" />
 
-	<script id='utils'
-		src="./src/js/utils.js?M3.4"
-	></script>
+<link id='favicon' async
+	rel='icon'
+	href="./res/raster/favicon.ico?M3.5" />
 
-	<body>
-		<header>
-		</header>
+<script id='utils'
+	src="./src/js/utils.js?M3.5"
+></script>
 
-		<main>
-			<section id='debugging'
-				title='JS Debug'
-			>
-				<form id='debug'>
-					<input id='repl'
-						type='text' name='repl'
-						placeholder="Input JS"
-						resizable />
-					<input id='evalrepl'
-						type='submit'
-						value='&#xE751;' />
-				</form>
+<body>
+	<header>
+	</header>
 
-				<code id='result' title='Try out JavaScript code'>
-					// Result
-				</code>
-			</section>
+	<main>
+		<section id='debugging'
+			title='JS Debug'
+		>
+			<form id='debug'>
+				<input id='repl'
+					type='text' name='repl'
+					placeholder="Input JS"
+					resizable />
+				<input id='evalrepl'
+					type='submit'
+					value='&#xE751;' />
+			</form>
 
-			<section id='dashboard'
-				title='Dashboard'
-			></section>
+			<code id='result' title='Try out JavaScript code'>
+				// Result
+			</code>
+		</section>
 
-			<section id='settings'
-				title='Settings'
-			></section>
+		<section id='dashboard'
+			title='Dashboard'
+		></section>
 
-			<section id='_home' class='home'
-				title='Shorten a link'
-			>
-				<form id='newlink'>
-					<input id='urlbox'
-						type='url' name='url' autocomplete='url'
-						placeholder='Input any URL'
-						required />
-					<input id='submiturl'
-						type='submit'
-						value='&#xE72A;' />
-				</form>
-			</section>
-		</main>
-	</body>
+		<section id='settings'
+			title='Settings'
+		></section>
 
-	<script async>
-		$('header')
-		.load("./content/pages/header.html");
-		$('#dashboard')
-		.load("./content/pages/dashboard.html");
-		$('#settings')
-		.load("./content/pages/settings.html");
-	</script>
+		<section id='_home' class='home'
+			title='Shorten a link'
+		>
+			<form id='newlink'>
+				<input id='urlbox'
+					type='url' name='url' autocomplete='url'
+					placeholder='Input any URL'
+					required />
+				<input id='submiturl'
+					type='submit'
+					value='&#xE72A;' />
+			</form>
 
-	<script id='dynamic'
-		src="./res/dynamic.js?M3.4"
-	></script>
-	<script id='debugger' defer
-		src="./src/js/debugger.js?M3.4"
-	></script>
-	<script id='main'
-		src="./src/js/index.js?M3.4"
-	></script>
-	<script defer
-		src="./src/js/printer.js?M3.4"
-	></script>
+			<noscript>
+				<info id='noscript' class='warning'
+					title='JavaScript is not enabled'
+				>
+					This website will not function properly if scripts are disabled.<br/>
+					Please enable JavaScript for
+					<a href="https://fasmga.org">fasmga.org</a>.
+
+					<a href="">
+						<button icon='&#xE727;'>
+							View this site for older browsers
+						</button>
+					</a>
+				</info>
+			</noscript>
+		</section>
+	</main>
+</body>
+
+<script async>
+	$('header')
+	.load("./content/pages/header.html");
+	$('#dashboard')
+	.load("./content/pages/dashboard.html");
+	$('#settings')
+	.load("./content/pages/settings.html");
+</script>
+
+<script id='dynamic' async
+	src="./res/dynamic.js?M3.5"
+></script>
+<script id='debugger' defer
+	src="./src/js/debugger.js?M3.5"
+></script>
+<script id='main'
+	src="./src/js/index.js?M3.5"
+></script>
+<script defer
+	src="./src/js/printer.js?M3.5"
+></script>
 </html>
