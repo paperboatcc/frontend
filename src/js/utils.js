@@ -58,14 +58,29 @@ function css(name, value = null) {
 	return $(':root').css(name);
 }
 
+/* Generate a random whole number */
+Math['randint'] = function(max) {
+	return Math.floor( Math.random() * max++ );
+};
+/* Pick a random item from an array */
+Math['pick'] = function(list) {
+	let randomIndex = Math.randint(list.length);
+	return list[randomIndex];
+}
+
 /* Handling screen sizes */
 let screenSmallerThan =(size) => {
 	return window.matchMedia(
 		`only screen and (max-width: ${size}px)`
 	).matches;
-}
+};
 let screenLargerThan =(size) => {
 	return window.matchMedia(
 		`only screen and (min-width: ${size}px)`
 	).matches;
-}
+};
+
+/* Animate HTML appending */
+$.fn.appendAnimated = function(html) {
+	this.append(html).show('slow');
+};

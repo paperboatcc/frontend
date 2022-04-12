@@ -8,7 +8,7 @@ urlBox.on('invalid', (event) => {
 
 		case 'do a barrel roll': {
 			event.preventDefault();
-			if ( css('animation') != 0 ) {
+			if ( css('animation') != '0s' ) {
 				css('animation', '1s')
 			}
 			$('body').css('transform', 'rotate(360deg)');
@@ -17,7 +17,7 @@ urlBox.on('invalid', (event) => {
 		
 		case 'dvd': {
 			event.preventDefault();
-			$('body').html($('#credits').prop('outerHTML'));
+			$('body').html( $('#credits').prop('outerHTML') );
 			$('#credits')
 			.wrap(
 				`<marquee id='screensaver' class='screensaver'
