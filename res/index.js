@@ -1,6 +1,3 @@
-/*
-	Webpage resources: pages, styles, content, scripts etc.
-*/
 let markup = {
 	_index: "index.html",
 	index: this._index
