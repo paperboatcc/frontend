@@ -6,19 +6,30 @@
 */
 
 
+// const client = new fasmga.Client("");
+
 let form = $('#newlink');
 let urlBox = $('#urlbox');
+
+let linkCard =(originalUrl, result)=> {
+	let slug = result.replace('fga.sh/', '');
+
+	return `
+<main>
+	<info id='${slug}' class='link-card'
+		link='${slug}'
+	>
+		Fasm.ga has generated this link for
+		<a href="${originalUrl}">${originalUrl}</a>.
+	</info>
+</main>`
+};
 
 form.on('submit', (event) => {
 	event.preventDefault();
 	$('.home')
-	.append(
-	`<info id='linknotice'
-		title='${urlBox.val()}'
-	>
-		You entered a valid URL: ${urlBox.val()}<br/>
-		URL shortening will be functional in M4. Sorry for the wait!
-	</info>`
+	.appendAnimated(
+		linkCard(urlBox.val(), 'Example')
 	);
 });
 
