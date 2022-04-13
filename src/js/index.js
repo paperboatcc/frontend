@@ -6,11 +6,6 @@
 */
 
 
-// const client = new fasmga.Client("");
-
-let form = $('#newlink');
-let urlBox = $('#urlbox');
-
 let linkCard =(originalUrl, result)=> {
 	let slug = result.replace('fga.sh/', '');
 
@@ -25,40 +20,37 @@ let linkCard =(originalUrl, result)=> {
 </main>`
 };
 
-form.on('submit', (event) => {
+$(newlink).on('submit', (event) => {
 	event.preventDefault();
 	$('.home')
 	.appendAnimated(
-		linkCard(urlBox.val(), 'Example')
+		linkCard($(urlbox).val(), 'Example')
 	);
 });
 
-urlBox.on('invalid', (event) => {
-	let formattedURL = `http://${urlBox.val()}`;
+$(urlbox).on('invalid', (event) => {
+	let formattedURL = `http://${$(urlbox).val()}`;
 	if ( isValidURL(formattedURL) ) {
 		event.preventDefault();
-		urlBox.val(formattedURL);
+		$(urlbox).val(formattedURL);
 		form.submit();
 	}
 });
 
 /* JS debug page code */
-let debugForm = $('#debug');
-let repl = $('#repl');
-
-debugForm.on('input', (event) => {
+$(debug).on('input', (event) => {
 	event.preventDefault();
 	debug(
-		repl.val(), (result, error)=> {
+		$(repl).val(), (result, error)=> {
 			let infoType = error ? 'error' : 'info';
 			let infoTitle = error ? error.constructor.name : repl.val();
 			let replColor = error ? 'var(--desert-red-80)' : 'var(--accent)';
-			repl.css('color', replColor);
+			$(repl).css('color', replColor);
 			$('#result')
 			.attr('type', infoType)
 			.attr('title', infoTitle)
 			.text(result);
 		}
 	);
-	if (repl.val() === "2+3") { go("https://billwurtz.com/2plus3.mp4"); }
+	if ($(repl).val() === "2+3") { go("https://billwurtz.com/2plus3.mp4"); }
 });

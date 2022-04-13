@@ -1,5 +1,5 @@
-urlBox.on('invalid', (event) => {
-	switch (urlBox.val()) {
+$(urlbox).on('invalid', (event) => {
+	switch ($(urlbox).val()) {
 		case '2+3': {
 			event.preventDefault();
 			go("https://billwurtz.com/2plus3.mp4");
@@ -8,10 +8,9 @@ urlBox.on('invalid', (event) => {
 
 		case 'do a barrel roll': {
 			event.preventDefault();
-			if ( css('animation') != '0s' ) {
-				css('animation', '1s')
-			}
-			$('body').css('transform', 'rotate(360deg)');
+			$('body')
+			.css('transform', 'rotate(360deg)')
+			.css('transition', 'var(--slow-animation)');
 			break;
 		}
 		
