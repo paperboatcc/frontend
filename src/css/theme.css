@@ -1,0 +1,101 @@
+/*
+	-> Name: light.css
+	-> Description: Charm.ga light theme for CSS
+	-> Resource: /src/css/themes/light.css
+	-> Licensing: GPLv3 | © 2022, Fasm.ga
+*/
+
+
+:root {
+	--accent: #04977C;
+
+	--arctic-haze-1: #E5F5F2;
+	--arctic-haze-2: #D8E4F3;
+	--arctic-haze-3: #C8D7E9;
+	--arctic-haze-4: #BBCADD;
+	--arctic-haze-5: #B1BECE;
+
+	--lunar-haze-1: #202B38;
+	--lunar-haze-2: #293747;
+	--lunar-haze-3: #324357;
+	--lunar-haze-4: #3C4F68;
+	--lunar-haze-5: #455C78;
+
+	--charm-green-1: #025041;
+	--charm-green-2: #036352;
+	--charm-green-3: #037762;
+	--charm-green-4: #048B72;
+	--charm-green-5: #04977C;
+	--charm-green-6: #05B393;
+	--charm-green-7: #05C7A3;
+	--charm-green-8: #06DBB4;
+	--charm-green-9: #06EFC4;
+
+	--light-blue-1: #2B578C;
+	--light-blue-2: #2B578C;
+	--light-blue-3: #2B578C;
+	--light-blue-4: #356AAC;
+	--light-blue-5: #447EC5;
+	--light-blue-6: #639ACF;
+	--light-blue-7: #82A9D9;
+	--light-blue-8: #A1BFE2;
+	--light-blue-9: #D8E4F3;
+
+	--desert-red-1: #6B0F20;
+	--desert-red-2: #7D1225;
+	--desert-red-3: #8F142B;
+	--desert-red-4: #A11730;
+	--desert-red-5: #B01934;
+	--desert-red-6: #C41C3B;
+	--desert-red-7: #D61F40;
+	--desert-red-8: #E0294A;
+	--desert-red-9: #E33B5A;
+
+	--light-yellow-1: #C9A503;
+	--light-yellow-2: #DDB503;
+	--light-yellow-3: #F1C604;
+	--light-yellow-4: #FBD00E;
+	--light-yellow-5: #FCD31C;
+	--light-yellow-6: #FCD836;
+	--light-yellow-7: #FCDC4A;
+	--light-yellow-8: #FDE05E;
+	--light-yellow-9: #FDE372;
+}
+
+.accent {	color: var(--accent); }
+.primary { background-color: var(--accent); }
+
+[theme=dark], [theme=dark] * {
+	--background: var(--lunar-haze-1);
+	--background-2: var(--lunar-haze-2);
+	--background-3: var(--lunar-haze-3);
+	--background-4: var(--lunar-haze-4);
+	--background-5: var(--lunar-haze-5);
+
+	--foreground: var(--arctic-haze-1);
+	--foreground-2: var(--arctic-haze-2);
+	--foreground-3: var(--arctic-haze-3);
+	--foreground-4: var(--arctic-haze-4);
+	--foreground-5: var(--arctic-haze-5);
+
+	--overlay-foreground-5: var(--foreground-2);
+	--overlay-foreground-10: var(--foreground-3);
+	--overlay-foreground-15: var(--foreground-4);
+}
+[theme=light], [theme=light] * {
+	--background: var(--arctic-haze-1);
+	--background-2: var(--arctic-haze-2);
+	--background-3: var(--arctic-haze-3);
+	--background-4: var(--arctic-haze-4);
+	--background-5: var(--arctic-haze-5);
+	
+	--foreground: var(--lunar-haze-1);
+	--foreground-2: var(--lunar-haze-2);
+	--foreground-3: var(--lunar-haze-3);
+	--foreground-4: var(--lunar-haze-4);
+	--foreground-5: var(--lunar-haze-5);
+
+	--overlay-foreground-5: var(--foreground-2);
+	--overlay-foreground-10: var(--foreground-3);
+	--overlay-foreground-15: var(--foreground-4);
+}
