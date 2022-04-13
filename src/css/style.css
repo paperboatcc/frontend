@@ -6,9 +6,8 @@
 */
 
 /*** Imports ***/
-@import url("./theme/dark.css?M3.5");
-@import url("./theme/light.css?M3.5") (prefers-color-scheme: light);
-@import url("./static.css?M3.5");
+@import url("./static.css?M3.6");
+@import url("./theme.css?M3.6");
 
 
 * {
@@ -17,7 +16,7 @@
 	text-decoration: none;
 	line-height: var(--default-line-height);
 
-	color: var(--foreground-10);
+	color: var(--foreground);
 
 	scroll-behavior: smooth;
 	will-change: transition;
@@ -32,7 +31,7 @@ html, body {
 
 	height: 100%;
 
-	background: var(--background-10);
+	background: var(--background);
 }
 
 body {
@@ -42,6 +41,11 @@ body {
 		'content';
 	grid-template-rows:
 		min-content 1fr;
+
+	margin-inline: var(--content-margin);
+
+	box-sizing: var(--section-border-box);
+	border: var(--section-border);
 }
 
 body > main {
@@ -71,7 +75,7 @@ a {
 	cursor: var(--link-cursor);
 }
 a:hover {
-	color: var(--charmga-accent-80);
+	color: var(--charm-green-6);
 }
 
 b,
@@ -85,6 +89,7 @@ code::before
 h1, .display {
 	font-family: var(--display);
 	font-size: var(--display-size);
+	letter-spacing: var(--bold-letter-spacing);
 }
 
 h2, .headline,
@@ -94,6 +99,7 @@ main > info::before
 	font-family: var(--headline);
 	font-size: var(--headline-size);
 	font-weight: var(--bold);
+	letter-spacing: var(--bold-letter-spacing);
 }
 
 h3, .subheadline,
@@ -101,6 +107,7 @@ section[subtitle]::before {
 	font-family: var(--subheadline);
 	font-size: var(--subheadline-size);
 	font-weight: var(--bold);
+	letter-spacing: var(--bold-letter-spacing);
 }
 
 pre,
@@ -186,13 +193,13 @@ section[subtitle]::before {
 	Additional webpage or stylistic elements
 ***/
 .positive { color: var(--accent); }
-.neutral { color: var(--foreground-20); }
-.negative { color: var(--desert-red-50); }
+.neutral { color: var(--foreground-2); }
+.negative { color: var(--desert-red-5); }
 
 .logo {
 	font-family: var(--display);
 
-	color: var(--foreground-20);
+	color: var(--foreground-2);
 }
 .logo:hover {
 	color: var(--accent);
@@ -228,7 +235,7 @@ code {
 	border: var(--element-border);
 	border-radius: var(--element-corner-radius);
 
-	background-color: var(--background-10);
+	background: var(--background);
 	color: var(--overlay-foreground-5);
 
 	overflow-wrap: break-word;
@@ -253,12 +260,12 @@ code.recommended::before {
 
 info.warning::before,
 code.warning::before {
-	color: var(--light-yellow-10)
+	color: var(--light-yellow-1)
 }
 
 info.error::before,
 code.error::before {
-	color: var(--desert-red-50);
+	color: var(--desert-red-5);
 }
 
 
@@ -274,7 +281,7 @@ header, footer
 	padding: var(--standard-padding);
 	z-index: var(--on-top);
 
-	background-color: var(--background-10);
+	background: var(--background);
 }
 header {
 	border-bottom: var(--section-border);
@@ -294,11 +301,6 @@ nav {
 
 nav[orientation=horizontal] {
 	display: block;
-
-	white-space: var(--no-wrap);
-
-	overflow-y: hidden;
-	overflow-x: auto;
 }
 nav[orientation=vertical] {
 	line-height: var(--vertical-nav-padding);
@@ -309,17 +311,20 @@ nav[orientation=vertical] {
 
 header nav,
 footer nav {
-	border-radius: 0;
-
 	text-align: center;
 }
 
-.accordion, .accordion.closed {
-	max-height: 0;
-	overflow: hidden;
-}
-.accordion.open, .accordion:target {
-	max-height: fit-content;
+@media only screen and (max-width: 800px) {
+	header {
+		position: fixed;
+		bottom: 0;
+
+		border-bottom: var(--min-border);
+		border-top: var(--section-border);
+	}
+	body {
+		padding-bottom: var(--standard-padding);
+	}
 }
 
 summary > * {
@@ -360,13 +365,13 @@ button, input[type=submit] {
 
 	padding: var(--standard-padding);
 
-	border: none;
+	border: var(--min-border);
 	border-radius: var(--control-corner-radius);
 
 	font-size: var(--button-text-size);
 
-	background-color: var(--foreground-20);
-	color: var(--background-10);
+	background: var(--foreground-2);
+	color: var(--background);
 
 	cursor: var(--link-cursor);
 	-webkit-appearance: none;
@@ -387,12 +392,12 @@ button[icon]::before
 
 button:hover, input[type=submit]:hover,
 main button, main > form input[type=submit] {
-	border: none;
-	background-color: var(--accent);
-	color: var(--background-10);
+	border: var(--min-border);
+	background: var(--accent);
+	color: var(--background);
 }
 main button:hover, main > form input[type=submit]:hover {
-	background-color: var(--charmga-accent-80);
+	background: var(--charmga-accent-80);
 }
 
 main > form input:not([type=submit]) {
@@ -403,10 +408,10 @@ input[type=submit] {
 
 	font-size: var(--icon-button-size);
 
-	color: var(--background-10);
+	color: var(--background);
 }
 main > form input:not([type=submit]):hover {
-	border-color: var(--charmga-accent-80);
+	border-color: var(--charm-green-8);
 }
 
 input:not([type=submit]) {
@@ -420,8 +425,8 @@ input:not([type=submit]) {
 
 	font-family: var(--monospace);
 
-	background-color: var(--transparency);
-	color: var(--foreground-10);
+	background: var(--transparency);
+	color: var(--foreground);
 }
 input:not([type=submit]):hover {
 	border: var(--control-accent-boundary);
@@ -430,25 +435,27 @@ input:not([type=submit]):hover {
 }
 
 nav a {
-	margin: var(--min-padding) 0;
+	margin-inline-end: var(--min-padding);
 	padding: var(--standard-padding);
 
 	font-family: var(--monospace);
 
-	color: var(--foreground-10);
+	color: var(--foreground);
 
 	white-space: var(--no-wrap);
 
 	cursor: var(--link-cursor);
 }
 nav a::before {
-	content: attr(icon) var(--text-spacing);
+	content: attr(icon);
+
+	margin-inline-end: var(--min-padding);
 }
-@media only screen and (max-width: 800px) {
-	header nav a {
-		font-size: 0;
-	}
+nav[orientation=horizontal] a {
+	line-height: var(--wrap-line-height);
 }
 nav[orientation=vertical] a {
 	display: block;
+}
+@media only screen and (max-width: 800px) {
 }
