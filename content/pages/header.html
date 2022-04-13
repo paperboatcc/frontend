@@ -6,12 +6,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Header</title>
 	<style>
-		#skipToMain {
+		.skipToMain {
 			position: absolute;
-			transform: translateY(-150%);
+			transform: translate(-105%, -30%);
+
+			cursor: default;
 		}
-		#skipToMain:focus {
-			transform: translateY(20%);
+		.skipToMain:not(:focus, :focus-visible) {
+			cursor: default;
+
+			background: transparent;
+			color: transparent;
 		}
 	</style>
 </head>
@@ -19,14 +24,14 @@
 	<nav id='navbar'
 		orientation='horizontal'
 	>
-		<a id='skipToMain'>
-			<button icon='&#xEB9D;'>
-				Skip to main content
-			</button>
-		</a>
+		<a class='skipToMain' href="#_home"
+			icon='&#xEB9D;'
+		>Skip to main content</a>
+
 		<a class='logo subheadline' href="/">
 			Fasm.ga
 		</a>
+
 		<a href="#newLink" icon='&#xE71B;'>Shorten a link</a>
 		<a href="#debugging" icon='&#xE943;'>JS Debug</a>
 		<a href="#dashboard" icon='&#xE74C;'>Dashboard</a>
