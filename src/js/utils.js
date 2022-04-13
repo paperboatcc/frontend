@@ -53,9 +53,32 @@ function css(name, value = null) {
 
 	// If specified, change the variable's value
 	if ( value !== null )
-		return $(':root').css(name, value);
+		return $`:root`.css(name, value);
 	// Else return the value using jQuery
-	return $(':root').css(name);
+	return $`:root`.css(name);
+}
+
+/* Change the language */
+function setLang(lang) {
+	$`html`
+	.attr('lang', lang);
+}
+
+/* Toggles document design mode on/off */
+function designMode() {
+	let isDesignModeOn
+		= document.designMode == 'on'
+		? true
+		: false;
+
+	return document.designMode
+		= isDesignModeOn ? 'off' : 'on';
+}
+
+/* Change the theme */
+function setTheme(theme) {
+	$`body`
+	.attr('theme', theme);
 }
 
 /* Generate a random whole number */
