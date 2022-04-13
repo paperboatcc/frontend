@@ -13,12 +13,11 @@ function debug(
 	let result, error;
 	try {
 		// 1— Evaluate the expression. Assigns the value to the result variable. If
-		//                             the operation completes successfully with no
-		//                             errors, jump to the finally block.
+		// the operation completes successfully with no errors, jump to the finally
+		// block.
 		result = eval(expr);
 	} catch (e) {
-		//                             If an error is thrown, catch it and store it
-		//                             in the error variable.
+		// If an error is thrown, catch it and store it in the error variable.
 		error = e;
 	} finally {
 		// 2— Call the handler function, with the proper arguments.

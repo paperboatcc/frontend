@@ -26,6 +26,7 @@
 	--max-padding: 12px;
 
 	--content-margin: 15%;
+	--content-padding: clamp(20%, 25%, 30%);
 
 	--grid-columns: repeat( auto-fill, minmax(fit-content, 0) );
 	--grid-gaps: var(--standard-padding);

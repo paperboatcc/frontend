@@ -6,8 +6,8 @@
 */
 
 /*** Imports ***/
-@import url("./static.css?M3.6");
-@import url("./theme.css?M3.6");
+@import url("./static.css?M3.7");
+@import url("./theme.css?M3.7");
 
 
 * {
@@ -323,7 +323,7 @@ footer nav {
 		border-top: var(--section-border);
 	}
 	body {
-		padding-bottom: var(--standard-padding);
+		padding-bottom: var(--content-padding);
 	}
 }
 
