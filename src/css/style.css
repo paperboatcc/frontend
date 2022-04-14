@@ -41,11 +41,6 @@ body {
 		'content';
 	grid-template-rows:
 		min-content 1fr;
-
-	margin-inline: var(--content-margin);
-
-	box-sizing: var(--section-border-box);
-	border: var(--section-border);
 }
 
 body > main {
@@ -75,7 +70,7 @@ a {
 	cursor: var(--link-cursor);
 }
 a:hover {
-	color: var(--charm-green-6);
+	color: var(--accent-alt);
 }
 
 b,
@@ -194,7 +189,7 @@ section[subtitle]::before {
 ***/
 .positive { color: var(--accent); }
 .neutral { color: var(--foreground-2); }
-.negative { color: var(--desert-red-5); }
+.negative { color: var(--red-5); }
 
 .logo {
 	font-family: var(--display);
@@ -260,19 +255,19 @@ code.recommended::before {
 
 info.warning::before,
 code.warning::before {
-	color: var(--light-yellow-1)
+	color: var(--yellow-1)
 }
 
 info.error::before,
 code.error::before {
-	color: var(--desert-red-5);
+	color: var(--red-5);
 }
 
 
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
 
 /***
-	Sections and semantics, parts of the webpage
+	Sections and parts of the webpage
 ***/
 header, footer
 {
@@ -319,6 +314,8 @@ footer nav {
 		position: fixed;
 		bottom: 0;
 
+		width: 100%;
+
 		border-bottom: var(--min-border);
 		border-top: var(--section-border);
 	}
@@ -346,7 +343,7 @@ summary:hover::before {
 	width: 100vw;
 	height: 100vh;
 
-	background: black;
+	background: var(--background);
 }
 
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
@@ -397,7 +394,7 @@ main button, main > form input[type=submit] {
 	color: var(--background);
 }
 main button:hover, main > form input[type=submit]:hover {
-	background: var(--charmga-accent-80);
+	background: var(--accent-alt);
 }
 
 main > form input:not([type=submit]) {
@@ -411,7 +408,7 @@ input[type=submit] {
 	color: var(--background);
 }
 main > form input:not([type=submit]):hover {
-	border-color: var(--charm-green-8);
+	border-color: var(--accent-alt);
 }
 
 input:not([type=submit]) {
@@ -451,11 +448,11 @@ nav a::before {
 
 	margin-inline-end: var(--min-padding);
 }
-nav[orientation=horizontal] a {
-	line-height: var(--wrap-line-height);
+@media only screen and (max-width: 800px) {
+	header nav a span {
+		display: none;
+	}
 }
 nav[orientation=vertical] a {
 	display: block;
-}
-@media only screen and (max-width: 800px) {
 }

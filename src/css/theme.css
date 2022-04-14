@@ -8,64 +8,65 @@
 
 :root {
 	--accent: #04977C;
+	--accent-alt: var(--green-7);
 
-	--arctic-haze-1: #E5F5F2;
-	--arctic-haze-2: #D8E4F3;
-	--arctic-haze-3: #C8D7E9;
-	--arctic-haze-4: #BBCADD;
-	--arctic-haze-5: #B1BECE;
+	--arctic-haze-1: hsl(169, 44%, 93%);
+	--arctic-haze-2: hsl(213, 53%, 90%);
+	--arctic-haze-3: hsl(30, 4%, 78%);
+	--arctic-haze-4: hsl(30, 4%, 73%);
+	--arctic-haze-5: hsl(30, 4%, 69%);
 
-	--lunar-haze-1: #202B38;
-	--lunar-haze-2: #293747;
-	--lunar-haze-3: #324357;
-	--lunar-haze-4: #3C4F68;
-	--lunar-haze-5: #455C78;
+	--lunar-haze-1: hsl(30, 5%, 8%);
+	--lunar-haze-2: hsl(30, 10%, 13%);
+	--lunar-haze-3: hsl(30, 15%, 18%);
+	--lunar-haze-4: hsl(30, 20%, 23%);
+	--lunar-haze-5: hsl(30, 25%, 28%);
 
-	--charm-green-1: #025041;
-	--charm-green-2: #036352;
-	--charm-green-3: #037762;
-	--charm-green-4: #048B72;
-	--charm-green-5: #04977C;
-	--charm-green-6: #05B393;
-	--charm-green-7: #05C7A3;
-	--charm-green-8: #06DBB4;
-	--charm-green-9: #06EFC4;
+	--green-1: hsl(168, 95%, 16%);
+	--green-2: hsl(169, 94%, 20%);
+	--green-3: hsl(169, 95%, 24%);
+	--green-4: hsl(169, 94%, 28%);
+	--green-5: hsl(169, 95%, 30%);
+	--green-6: hsl(169, 95%, 36%);
+	--green-7: hsl(169, 95%, 40%);
+	--green-8: hsl(169, 95%, 44%);
+	--green-9: hsl(169, 95%, 48%);
 
-	--light-blue-1: #2B578C;
-	--light-blue-2: #2B578C;
-	--light-blue-3: #2B578C;
-	--light-blue-4: #356AAC;
-	--light-blue-5: #447EC5;
-	--light-blue-6: #639ACF;
-	--light-blue-7: #82A9D9;
-	--light-blue-8: #A1BFE2;
-	--light-blue-9: #D8E4F3;
+	--blue-1: hsl(213, 53%, 36%);
+	--blue-2: hsl(213, 53%, 36%);
+	--blue-3: hsl(213, 53%, 36%);
+	--blue-4: hsl(213, 53%, 44%);
+	--blue-5: hsl(213, 53%, 52%);
+	--blue-6: hsl(209, 53%, 60%);
+	--blue-7: hsl(213, 53%, 68%);
+	--blue-8: hsl(212, 53%, 76%);
+	--blue-9: hsl(213, 53%, 90%);
 
-	--desert-red-1: #6B0F20;
-	--desert-red-2: #7D1225;
-	--desert-red-3: #8F142B;
-	--desert-red-4: #A11730;
-	--desert-red-5: #B01934;
-	--desert-red-6: #C41C3B;
-	--desert-red-7: #D61F40;
-	--desert-red-8: #E0294A;
-	--desert-red-9: #E33B5A;
+	--red-1: hsl(349, 75%, 24%);
+	--red-2: hsl(349, 75%, 28%);
+	--red-3: hsl(349, 75%, 32%);
+	--red-4: hsl(349, 75%, 36%);
+	--red-5: hsl(349, 75%, 39%);
+	--red-6: hsl(349, 75%, 44%);
+	--red-7: hsl(349, 75%, 48%);
+	--red-8: hsl(349, 75%, 52%);
+	--red-9: hsl(349, 75%, 56%);
 
-	--light-yellow-1: #C9A503;
-	--light-yellow-2: #DDB503;
-	--light-yellow-3: #F1C604;
-	--light-yellow-4: #FBD00E;
-	--light-yellow-5: #FCD31C;
-	--light-yellow-6: #FCD836;
-	--light-yellow-7: #FCDC4A;
-	--light-yellow-8: #FDE05E;
-	--light-yellow-9: #FDE372;
+	--yellow-1: hsl(49, 97%, 40%);
+	--yellow-2: hsl(49, 97%, 44%);
+	--yellow-3: hsl(49, 97%, 48%);
+	--yellow-4: hsl(49, 97%, 52%);
+	--yellow-5: hsl(49, 97%, 55%);
+	--yellow-6: hsl(49, 97%, 60%);
+	--yellow-7: hsl(49, 97%, 64%);
+	--yellow-8: hsl(49, 98%, 68%);
+	--yellow-9: hsl(49, 97%, 72%);
 }
 
 .accent {	color: var(--accent); }
 .primary { background-color: var(--accent); }
 
-[theme=dark], [theme=dark] * {
+[theme=dark], [theme=auto] {
 	--background: var(--lunar-haze-1);
 	--background-2: var(--lunar-haze-2);
 	--background-3: var(--lunar-haze-3);
@@ -73,7 +74,7 @@
 	--background-5: var(--lunar-haze-5);
 
 	--foreground: var(--arctic-haze-1);
-	--foreground-2: var(--arctic-haze-2);
+	--foreground-2: var(--arctic-haze-3);
 	--foreground-3: var(--arctic-haze-3);
 	--foreground-4: var(--arctic-haze-4);
 	--foreground-5: var(--arctic-haze-5);
@@ -82,7 +83,7 @@
 	--overlay-foreground-10: var(--foreground-3);
 	--overlay-foreground-15: var(--foreground-4);
 }
-[theme=light], [theme=light] * {
+[theme=light] {
 	--background: var(--arctic-haze-1);
 	--background-2: var(--arctic-haze-2);
 	--background-3: var(--arctic-haze-3);
@@ -98,4 +99,24 @@
 	--overlay-foreground-5: var(--foreground-2);
 	--overlay-foreground-10: var(--foreground-3);
 	--overlay-foreground-15: var(--foreground-4);
+}
+
+@media (prefers-color-scheme: light) {
+	[theme=auto] {
+		--background: var(--arctic-haze-1);
+		--background-2: var(--arctic-haze-2);
+		--background-3: var(--arctic-haze-3);
+		--background-4: var(--arctic-haze-4);
+		--background-5: var(--arctic-haze-5);
+		
+		--foreground: var(--lunar-haze-1);
+		--foreground-2: var(--lunar-haze-2);
+		--foreground-3: var(--lunar-haze-3);
+		--foreground-4: var(--lunar-haze-4);
+		--foreground-5: var(--lunar-haze-5);
+	
+		--overlay-foreground-5: var(--foreground-2);
+		--overlay-foreground-10: var(--foreground-3);
+		--overlay-foreground-15: var(--foreground-4);
+	}
 }
