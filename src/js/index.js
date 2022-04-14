@@ -42,15 +42,18 @@ $(debug).on('input', (event) => {
 	event.preventDefault();
 	debug(
 		$(repl).val(), (result, error)=> {
-			let infoType = error ? 'error' : 'info';
-			let infoTitle = error ? error.constructor.name : repl.val();
-			let replColor = error ? 'var(--desert-red-80)' : 'var(--accent)';
+			let infoType = error ? 'error' : 'recommended';
+			let infoTitle = error ? error.constructor.name : $(repl).val();
+			let content = error
+				? error.message.replace(`${error.constructor.name}: `, '')
+				: result;
+			let replColor = error ? 'var(--desert-red-8)' : 'var(--accent)';
 			$(repl).css('color', replColor);
 			$('#result')
-			.attr('type', infoType)
+			.attr('class', infoType)
 			.attr('title', infoTitle)
-			.text(result);
+			.text(content);
 		}
 	);
-	if ($(repl).val() === "2+3") { go("https://billwurtz.com/2plus3.mp4"); }
+	if ( $(repl).val() === "2+3" ) { go("https://billwurtz.com/2plus3.mp4"); }
 });
