@@ -25,7 +25,7 @@
 	--standard-padding: 8px;
 	--max-padding: 12px;
 
-	--content-margin: 15%;
+	--content-margin: var(--min-line-width);
 	--content-padding: clamp(20%, 25%, 30%);
 
 	--grid-columns: repeat( auto-fill, minmax(fit-content, 0) );
@@ -74,19 +74,18 @@
 	--logo: var(--display); --logo-size: 4rem;
 	--display: 'Poppins'; --display-size: 3rem;
 	--headline: var(--monospace); --headline-size: 2rem; --title-height: 4rem;
-	--subheadline: var(--text); --subheadline-size: 1.4rem;
-	--monospace: 'JetBrains Mono NF';
-	--wrap-icon-height: calc( var(--text-size) + 4px );
+	--subheadline: var(--monospace); --subheadline-size: 1.4rem;
+	--monospace: 'JetBrains Mono NF', monospace;
 	--icon: 'Segoe Fluent Icons'; --icon-size: 1.1em; --icon-alignment: middle;
 	--icon-button-size: 20px;
 	--button-text-size: 0.9rem;
 	--link-text-decoration: dotted; --link-cursor: pointer;
 
-	--thin: thin;
-	--light: lighter;
-	--regular: normal;
-	--bold: bold;
-	--thick: bolder;
+	--thin: 100;
+	--light: 200;
+	--regular: 300;
+	--bold: 600;
+	--thick: 700;
 
 	--text-spacing: ' ';
 
