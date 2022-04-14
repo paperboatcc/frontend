@@ -1,0 +1,28 @@
+{
+  "name": "frontend",
+  "version": "0.7.0",
+  "description": "Fasm.ga's new website",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "http-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fasmga/frontend.git"
+  },
+  "keywords": [
+    "website",
+    "frontend",
+    "url-shortener",
+    "webapp"
+  ],
+  "author": "fasmga",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/fasmga/frontend/issues"
+  },
+  "homepage": "https://github.com/fasmga/frontend#readme",
+  "dependencies": {
+    "http-server": "^14.1.0"
+  }
+}
