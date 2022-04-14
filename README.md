@@ -1,12 +1,27 @@
 ![Fasm.ga icon](https://avatars.githubusercontent.com/u/74462908?s=48)
-### [fasmga.org](https://fasmga.org)
+#### Welcome to Fasm.ga 4, the simple URL shortener that enhances your web experience.
 
-Fasm.ga's official website
+## Run locally
+```powershell
+npm start
+```
+Ensure you have **Node.js** installed along with **npm** on the latest version.
+Then simply run `npm start` in the project directory.
+
+You can also use `npx` to run `http-server` directly from the npm registry (so
+it requires no installation):
+```powershell
+npx http-server .
+```
+
+### Requirements
+* Node `>=12`
+* npm `>=6.9.0`
+### Dependencies
+* [http-server](https://github.com/http-party/http-server) `^14.1.0`
+* [fasmga.js](https://github.com/fasmga/fasmga.js)
 
 ---------
-
-Welcome to Fasm.ga 4, the simple URL shortener that enhances your web
-experience.
 
 > **Shorten any link for free**
 >
