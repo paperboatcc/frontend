@@ -75,7 +75,9 @@
 	--display: 'Poppins'; --display-size: 3rem;
 	--headline: var(--monospace); --headline-size: 2rem; --title-height: 4rem;
 	--subheadline: var(--text); --subheadline-size: 1.4rem;
-	--monospace: 'JetBrains Mono NF', monospace;
+
+--monospace: 'JetBrains Mono NF', monospace;
+
 	--icon: 'Segoe Fluent Icons'; --icon-size: 1.1em; --icon-alignment: middle;
 	--icon-button-size: 20px;
 	--button-text-size: 0.9rem;
