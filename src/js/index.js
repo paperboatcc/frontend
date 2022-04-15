@@ -29,6 +29,10 @@ $(urlbox).on('invalid', (event) => {
 	}
 });
 
+$('button.show-completed').on('click', (event) => {
+	$(event.currentTarget).addClass('completed');
+});
+
 $('#copylink').on('click', () => {
 	let link = $('#link').attr('link');
 	navigator.clipboard.writeText(link);

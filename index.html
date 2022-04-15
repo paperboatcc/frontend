@@ -23,12 +23,12 @@
 	integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
 	crossorigin="anonymous"
 ></script>
-<script async src="./res/index.js?M3.20"></script>
+<script async src="./res/index.js?M3.21"></script>
 <link id='style' rel='stylesheet'
-	href="./src/css/style.css?M3.20" />
+	href="./src/css/style.css?M3.21" />
 <link async rel='icon'
-	href="./res/raster/favicon.ico?M3.20" />
-<script src="./src/js/utils.js?M3.20"></script>
+	href="./res/raster/favicon.ico?M3.21" />
+<script src="./src/js/utils.js?M3.21"></script>
 
 <body>
 	<header>
@@ -47,30 +47,25 @@
 			title='Shorten a link'
 		>
 			<form id='newlink'>
-				<label for='urlbox' icon='&#xE71B;'>
-					URL
-				</label>
-				<input id='urlbox'
-					type='url' name='url' autocomplete='url'
-					placeholder='Input any URL'
-					required />
-				<input id='submiturl'
-					type='submit'
-					value='&#xE72A;' />
+				<div>
+					<label for='urlbox' icon='&#xE71B;'>
+						URL
+					</label>
+					<input id='urlbox'
+						type='url' name='url' autocomplete='url'
+						placeholder='Input any URL'
+						required />
+					<input id='submiturl'
+						type='submit'
+						value='&#xE72A;' />
+				</div>
 			</form>
 
 			<main>
 				<dialog id='link' class='link-card'>
-					<button id='copylink'
-						icon='&#xE8C8;'
-					>
-						COPY
-					</button> 
-					<button id='sharelink'
-						icon='&#xE72D;'
-					>
-						SHARE
-					</button>
+					<button id='copylink' class='primary show-completed'
+						icon='&#xE8C8;'>Copy</button> 
+					<button id='sharelink' icon='&#xE72D;'>Share</button>
 				</dialog>
 			</main>
 
@@ -90,18 +85,14 @@
 						</label>
 						<input id='format'
 							type='text' name='format' list='idpresets'
-							placeholder='cUstOm' />
+							placeholder='abcdefgh' />
 						<datalist id='idpresets'>
-							<option value="abcdef" />
-							<option value="Abcdef" />
-							<option value="aBCdEF" />
-							<option value="AbcDef" />
-							<option value="AbCDEF" />
+							<option value="abcdefgh" />
+							<option value="abc12345" />
+							<option value="aBCde" />
 						</datalist>
 					</div>
-
 					<br/><br/>
-
 					<div>
 						<label for='password' icon='&#xF439;'>
 							Password protection
@@ -141,9 +132,9 @@
 </script>
 
 <script async
-	src="./res/dynamic.js?M3.20"></script>
+	src="./res/dynamic.js?M3.21"></script>
 <script
-	src="./src/js/index.js?M3.20"></script>
+	src="./src/js/index.js?M3.21"></script>
 <script defer
-	src="./src/js/other.js?M3.20"></script>
+	src="./src/js/other.js?M3.21"></script>
 </html>

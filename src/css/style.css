@@ -6,8 +6,8 @@
 */
 
 /*** Imports ***/
-@import url("./static.css?M3.20");
-@import url("./theme.css?M3.20");
+@import url("./static.css?M3.21");
+@import url("./theme.css?M3.21");
 
 
 * {
@@ -150,7 +150,7 @@ section:not([open]), section:target ~ section.home  {
 }
 section.home, section:target {
 	display: grid;
-	animation: slide-in var(--animation) forwards alternate;
+	animation: var(--slide-in);
 }
 
 @keyframes slide-in {
@@ -168,6 +168,24 @@ section.home, section:target {
 		transform: none;
 	} 100% {
 		opacity: 0;
+		transform: translateX(100%);
+	}
+}
+@keyframes plop-in {
+	0% {
+		max-height: 0px;
+		transform: translateX(-100%);
+	} 100% {
+		height: fit-content;
+		transform: none;
+	}
+}
+@keyframes plop-out {
+	0% {
+		max-height: none;
+		transform: none;
+	} 100% {
+		height: 0px;
 		transform: translateX(100%);
 	}
 }
@@ -207,7 +225,8 @@ nav a::before,
 [icon]::before,
 ::marker {
 	content: attr(icon);
-	
+
+	margin-inline-end: var(--min-padding);
 	vertical-align: var(--icon-alignment);
 
 	font-family: var(--icon);
@@ -248,6 +267,10 @@ code::before {
 	content: attr(title);
 
 	padding-bottom: var(--min-padding);
+}
+
+dialog[open] {
+	animation: var(--plop-in);
 }
 
 dialog.link-card::before {
@@ -366,7 +389,7 @@ summary:hover::before {
 /***
 	Interactive user controls: buttons, inputs and forms
 ***/
-form, form div {
+form > div {
 	display: grid;
 	grid-template-areas:
 		'label label'
@@ -376,16 +399,16 @@ form, form div {
 	row-gap: var(--standard-padding);
 }
 
-:is(form, form div) label {
+form > div label {
 	grid-area: label;
 }
-:is(form, form div) input {
+form > div input {
 	grid-area: input;
 }
-:is(form, form div) input:first-of-type ~ input[type=submit] {
+form > div input:first-of-type ~ input[type=submit] {
 	grid-area: enter;
 }
-:is(form, form div) input[type=submit]:last-child {
+form > div input[type=submit]:last-child {
 	grid-area: submit;
 }
 
@@ -412,24 +435,21 @@ button {
 	font-family: var(--monospace);
 	vertical-align: middle;
 }
-
-button[icon]::before,
-::placeholder::after {
-	display: inline;
-
-	content: attr(icon);
-
-	margin-right: var(--min-padding);
+button.primary {
+	text-transform: uppercase;
 }
 
 button:hover, input[type=submit]:hover,
-main button, main > form input[type=submit] {
+button.primary, main > form input[type=submit] {
 	border: var(--min-border);
 	background: var(--accent);
 	color: var(--background);
 }
-main button:hover, main > form input[type=submit]:hover {
+main button:hover, button.primary:hover, main > form input[type=submit]:hover {
 	background: var(--accent-alt);
+}
+button.completed::before {
+	content: '\E73E';
 }
 
 main > form input:not([type=submit]) {
@@ -480,11 +500,12 @@ nav a {
 }
 nav a::before {
 	content: attr(icon);
-
-	margin-inline-end: var(--min-padding);
+}
+nav a::after {
+	content: attr(title);
 }
 @media only screen and (max-width: 800px) {
-	header nav a span {
+	header nav a::after {
 		display: none;
 	}
 }

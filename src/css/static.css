@@ -98,6 +98,10 @@
 
 	--animation: 350ms ease;
 	--slow-animation: 850ms ease;
+	--slide-in: slide-in var(--animation) forwards alternate;
+	--slide-out: slide-out var(--animation) forwards alternate;
+	--plop-in: plop-in var(--animation) forwards alternate;
+	--plop-out: plop-out var(--animation) forwards alternate;
 }
 @media only screen and (max-width: 800px) {
 	:root {

@@ -105,6 +105,12 @@ let screenLargerThan =(size) => {
 };
 
 /* jQuery showModal() extension for <dialog>s */
+$.fn.show = function() {
+	this[0]
+	.show();
+	$(this)
+	.css( 'animation', 'var(--plop-in)' );
+};
 $.fn.showModal = function() {
 	this[0].showModal();
 };
