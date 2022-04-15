@@ -14,7 +14,7 @@ let linkCard =(originalUrl, result)=> {
 <main>
 	<dialog id='${slug}' class='link-card'
 		link='${slug}'
-	>
+	open>
 		Fasm.ga has generated this link for
 		<a href="${originalUrl}">${originalUrl}</a>.
 	</dialog>
