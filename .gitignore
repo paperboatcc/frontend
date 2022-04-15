@@ -1,14 +1,10 @@
 _*
-*_pvt
-*.private
+*.pvt
 pvt/
 private/
-private
-private__*
 *.tkn
+.env
+node_modules/
 *.[Ss]ession
 *.[Ss]ession-[Ll]ock
-*.khp-private
-*.wgl-private
-token
 .vscode/
