@@ -23,12 +23,12 @@
 	integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
 	crossorigin="anonymous"
 ></script>
-<script async src="./res/index.js?M3.12"></script>
+<script async src="./res/index.js?M3.20"></script>
 <link id='style' rel='stylesheet'
-	href="./src/css/style.css?M3.15" />
+	href="./src/css/style.css?M3.20" />
 <link async rel='icon'
-	href="./res/raster/favicon.ico?M3.12" />
-<script src="./src/js/utils.js?M3.13"></script>
+	href="./res/raster/favicon.ico?M3.20" />
+<script src="./src/js/utils.js?M3.20"></script>
 
 <body>
 	<header>
@@ -47,6 +47,9 @@
 			title='Shorten a link'
 		>
 			<form id='newlink'>
+				<label for='urlbox' icon='&#xE71B;'>
+					URL
+				</label>
 				<input id='urlbox'
 					type='url' name='url' autocomplete='url'
 					placeholder='Input any URL'
@@ -56,32 +59,73 @@
 					value='&#xE72A;' />
 			</form>
 
+			<main>
+				<dialog id='link' class='link-card'>
+					<button id='copylink'
+						icon='&#xE8C8;'
+					>
+						COPY
+					</button> 
+					<button id='sharelink'
+						icon='&#xE72D;'
+					>
+						SHARE
+					</button>
+				</dialog>
+			</main>
+
+			<dialog id='invalidurl' class='error'
+				title='Invalid URL'
+			>
+				The URL you enter is empty, not valid or not eligible for shortening.
+			</dialog>
+			
 			<details>
 				<summary>Customize</summary>
 
-				<input
-					type='text' name='format'
-					placeholder='ID format' />
-				<br/><br/>
-				<input
-					type='password' name='password'
-					placeholder='Password protection' />
+				<form>
+					<div>
+						<label for='format' icon='&#xE8E9;'>
+							ID format
+						</label>
+						<input id='format'
+							type='text' name='format' list='idpresets'
+							placeholder='cUstOm' />
+						<datalist id='idpresets'>
+							<option value="abcdef" />
+							<option value="Abcdef" />
+							<option value="aBCdEF" />
+							<option value="AbcDef" />
+							<option value="AbCDEF" />
+						</datalist>
+					</div>
+
+					<br/><br/>
+
+					<div>
+						<label for='password' icon='&#xF439;'>
+							Password protection
+						</label>
+						<input id='password'
+							type='password' name='password'
+							placeholder='***' />
+					</div>
+				</form>
 			</details>
 
 			<noscript>
 				<dialog id='noscript' class='warning'
 					title='JavaScript is not enabled'
 				open>
-					This website will not function properly if scripts are disabled.<br/>
-					Please enable JavaScript for
-					<a href="https://fasmga.org">fasmga.org</a>.
-
+					This website will not function properly if scripts are disabled.
+					Please enable JavaScript for <a href="https://fasmga.org">fasmga.org</a>.
+					<br/><br/>
 					<a href="">
 						<button icon='&#xE727;'>
 							View this site for older browsers
 						</button>
 					</a>
-				<dialog>
+				</dialog>
 			</noscript>
 		</section>
 	</main>
@@ -97,9 +141,9 @@
 </script>
 
 <script async
-	src="./res/dynamic.js?M3.13"></script>
+	src="./res/dynamic.js?M3.20"></script>
 <script
-	src="./src/js/index.js?M3.13"></script>
+	src="./src/js/index.js?M3.20"></script>
 <script defer
-	src="./src/js/other.js?M3.13"></script>
+	src="./src/js/other.js?M3.20"></script>
 </html>

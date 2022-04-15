@@ -6,34 +6,40 @@
 */
 
 
-let linkCard =(originalUrl, result)=> {
-	let slug = result.replace('fga.sh/', '');
-	copy(result);
-
-	return `
-<main>
-	<dialog id='${slug}' class='link-card'
-		link='${slug}'
-	open>
-		Fasm.ga has generated this link for
-		<a href="${originalUrl}">${originalUrl}</a>.
-	</dialog>
-</main>`
-};
-
 $(newlink).on('submit', (event) => {
 	event.preventDefault();
-	$('.home')
-	.appendAnimated(
-		linkCard($(urlbox).val(), 'Example')
-	);
+	$('#invalidurl')
+	.hide();
+	$('#link')
+	.attr('link', 'fga.sh/example')
+	.attr('original', $(urlbox).val() )
+	.show();
 });
 
 $(urlbox).on('invalid', (event) => {
+	event.preventDefault();
 	let formattedURL = `http://${$(urlbox).val()}`;
 	if ( isValidURL(formattedURL) ) {
 		event.preventDefault();
 		$(urlbox).val(formattedURL);
-		form.submit();
+		$(newlink).submit();
+	} else {
+		$('#invalidurl')
+		.show();
 	}
+});
+
+$('#copylink').on('click', () => {
+	let link = $('#link').attr('link');
+	navigator.clipboard.writeText(link);
+});
+$('#sharelink').on('click', () => {
+	let link = $('#link').attr('link');
+	let original = $('#link').attr('original');
+	let data = {
+		title: original,
+		text: `Redirect to ${original}.`,
+		url: link
+	};
+	navigator.share(data);
 });
