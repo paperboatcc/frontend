@@ -6,8 +6,8 @@
 */
 
 /*** Imports ***/
-@import url("./static.css?M3.9");
-@import url("./theme.css?M3.9");
+@import url("./static.css?M3.11");
+@import url("./theme.css?M3.11");
 
 
 * {
@@ -98,7 +98,8 @@ main > dialog::before
 }
 
 h3, .subheadline,
-section[subtitle]::before {
+section[subtitle]::before,
+summary {
 	font-family: var(--subheadline);
 	font-size: var(--subheadline-size);
 	font-weight: var(--bold);
@@ -142,7 +143,6 @@ section {
 	scroll-behavior: smooth;
 }
 
-/* Hacky solution but I can get away with it for now */
 section, section:target ~ section.home  {
 	display: none;
 }
@@ -220,6 +220,7 @@ button[icon]::before,
 dialog,
 code {
 	display: inline-block;
+	position: relative;
 
 	margin-block: var(--standard-padding);
 	padding: var(--max-padding);
