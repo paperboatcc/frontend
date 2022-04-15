@@ -74,7 +74,7 @@ a:hover {
 }
 
 b,
-info::before,
+dialog::before,
 code::before
 {
 	font-weight: var(--bold);
@@ -89,7 +89,7 @@ h1, .display {
 
 h2, .headline,
 section::before,
-main > info::before
+main > dialog::before
 {
 	font-family: var(--headline);
 	font-size: var(--headline-size);
@@ -217,7 +217,7 @@ button[icon]::before,
 ::marker
 { font-family: var(--icon); }
 
-info,
+dialog,
 code {
 	display: inline-block;
 
@@ -235,7 +235,7 @@ code {
 
 	overflow-wrap: break-word;
 }
-info::before,
+dialog::before,
 code::before {
 	display: block;
 	content: attr(title);
@@ -248,17 +248,17 @@ info.link-card::before {
 	color: var(--accent);
 }
 
-info.recommended::before,
+dialog.recommended::before,
 code.recommended::before {
 	color: var(--accent);
 }
 
-info.warning::before,
+dialog.warning::before,
 code.warning::before {
 	color: var(--yellow-1)
 }
 
-info.error::before,
+dialog.error::before,
 code.error::before {
 	color: var(--red-5);
 }
