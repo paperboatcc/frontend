@@ -327,6 +327,7 @@ footer nav {
 
 summary {
 	display: inline-block;
+	margin-block: var(--min-padding);
 }
 summary {
 	list-style: none;
