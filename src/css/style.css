@@ -6,8 +6,8 @@
 */
 
 /*** Imports ***/
-@import url("./static.css?M3.12");
-@import url("./theme.css?M3.12");
+@import url("./static.css?M3.20");
+@import url("./theme.css?M3.20");
 
 
 * {
@@ -75,7 +75,8 @@ a:hover {
 
 b,
 dialog::before,
-code::before
+code::before,
+label
 {
 	font-weight: var(--bold);
 	letter-spacing: var(--bold-letter-spacing);
@@ -130,7 +131,8 @@ img {
 /***
 	Styles for website pages and sections, designed for fast page navigation
 ***/
-section {
+section,
+details {
 	gap: var(--grid-gaps);
 	place-items: center;
 	place-self: center;
@@ -143,7 +145,7 @@ section {
 	scroll-behavior: smooth;
 }
 
-section, section:target ~ section.home  {
+section:not([open]), section:target ~ section.home  {
 	display: none;
 }
 section.home, section:target {
@@ -202,8 +204,10 @@ section[subtitle]::before {
 
 icon,
 nav a::before,
-button[icon]::before,
+[icon]::before,
 ::marker {
+	content: attr(icon);
+	
 	vertical-align: var(--icon-alignment);
 
 	font-family: var(--icon);
@@ -211,12 +215,14 @@ button[icon]::before,
 }
 
 icon.fluent,
-nav a::before,
 input[type=submit],
-button[icon]::before,
+[icon]::before,
 ::marker
 { font-family: var(--icon); }
 
+dialog:not([open]) {
+	display: none;
+}
 dialog,
 code {
 	display: inline-block;
@@ -245,8 +251,15 @@ code::before {
 }
 
 dialog.link-card::before {
-	content: 'fga.sh/' attr(link);
+	content: attr(link);
+
 	color: var(--accent);
+}
+dialog.link-card::after {
+	display: block;
+	content: 'Original URL: ' attr(original);
+
+	padding-top: var(--min-padding);
 }
 
 dialog.recommended::before,
@@ -345,7 +358,7 @@ summary:hover::before {
 	width: 100vw;
 	height: 100vh;
 
-	background: var(--background);
+	background: var(--lunar-haze-3);
 }
 
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
@@ -353,9 +366,27 @@ summary:hover::before {
 /***
 	Interactive user controls: buttons, inputs and forms
 ***/
-form {
-	display: flex;
+form, form div {
+	display: grid;
+	grid-template-areas:
+		'label label'
+		'input enter'
+		'submit submit';
 	column-gap: var(--min-padding);
+	row-gap: var(--standard-padding);
+}
+
+:is(form, form div) label {
+	grid-area: label;
+}
+:is(form, form div) input {
+	grid-area: input;
+}
+:is(form, form div) input:first-of-type ~ input[type=submit] {
+	grid-area: enter;
+}
+:is(form, form div) input[type=submit]:last-child {
+	grid-area: submit;
 }
 
 button, input[type=submit] {
@@ -382,8 +413,10 @@ button {
 	vertical-align: middle;
 }
 
-button[icon]::before
-{
+button[icon]::before,
+::placeholder::after {
+	display: inline;
+
 	content: attr(icon);
 
 	margin-right: var(--min-padding);
