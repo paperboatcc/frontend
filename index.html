@@ -23,12 +23,12 @@
 	integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
 	crossorigin="anonymous"
 ></script>
-<script async src="./res/index.js?M3.9"></script>
+<script async src="./res/index.js?M3.12"></script>
 <link id='style' rel='stylesheet'
-	href="./src/css/style.css?M3.9" />
+	href="./src/css/style.css?M3.15" />
 <link async rel='icon'
-	href="./res/raster/favicon.ico?M3.9" />
-<script src="./src/js/utils.js?M3.9"></script>
+	href="./res/raster/favicon.ico?M3.12" />
+<script src="./src/js/utils.js?M3.13"></script>
 
 <body>
 	<header>
@@ -49,7 +49,7 @@
 			<form id='newlink'>
 				<input id='urlbox'
 					type='url' name='url' autocomplete='url'
-					placeholder='&#xE71B; Input any URL'
+					placeholder='Input any URL'
 					required />
 				<input id='submiturl'
 					type='submit'
@@ -57,23 +57,21 @@
 			</form>
 
 			<details>
-				<summary>
-					<h3>Customize</h3>
-				</summary>
+				<summary>Customize</summary>
 
 				<input
 					type='text' name='format'
-					placeholder='&#xE84A; ID format' />
+					placeholder='ID format' />
 				<br/><br/>
 				<input
 					type='password' name='password'
-					placeholder='&#xF439; Password protection' />
+					placeholder='Password protection' />
 			</details>
 
 			<noscript>
-				<info id='noscript' class='warning'
+				<dialog id='noscript' class='warning'
 					title='JavaScript is not enabled'
-				>
+				open>
 					This website will not function properly if scripts are disabled.<br/>
 					Please enable JavaScript for
 					<a href="https://fasmga.org">fasmga.org</a>.
@@ -83,7 +81,7 @@
 							View this site for older browsers
 						</button>
 					</a>
-				</info>
+				<dialog>
 			</noscript>
 		</section>
 	</main>
@@ -99,9 +97,9 @@
 </script>
 
 <script async
-	src="./res/dynamic.js?M3.9"></script>
+	src="./res/dynamic.js?M3.13"></script>
 <script
-	src="./src/js/index.js?M3.9"></script>
+	src="./src/js/index.js?M3.13"></script>
 <script defer
-	src="./src/js/other.js?M3.9"></script>
+	src="./src/js/other.js?M3.13"></script>
 </html>

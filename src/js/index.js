@@ -8,15 +8,16 @@
 
 let linkCard =(originalUrl, result)=> {
 	let slug = result.replace('fga.sh/', '');
+	copy(result);
 
 	return `
 <main>
-	<info id='${slug}' class='link-card'
+	<dialog id='${slug}' class='link-card'
 		link='${slug}'
-	>
+	open>
 		Fasm.ga has generated this link for
 		<a href="${originalUrl}">${originalUrl}</a>.
-	</info>
+	</dialog>
 </main>`
 };
 

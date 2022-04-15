@@ -6,8 +6,8 @@
 */
 
 /*** Imports ***/
-@import url("./static.css?M3.9");
-@import url("./theme.css?M3.9");
+@import url("./static.css?M3.12");
+@import url("./theme.css?M3.12");
 
 
 * {
@@ -74,7 +74,7 @@ a:hover {
 }
 
 b,
-info::before,
+dialog::before,
 code::before
 {
 	font-weight: var(--bold);
@@ -89,7 +89,7 @@ h1, .display {
 
 h2, .headline,
 section::before,
-main > info::before
+main > dialog::before
 {
 	font-family: var(--headline);
 	font-size: var(--headline-size);
@@ -98,7 +98,8 @@ main > info::before
 }
 
 h3, .subheadline,
-section[subtitle]::before {
+section[subtitle]::before,
+summary {
 	font-family: var(--subheadline);
 	font-size: var(--subheadline-size);
 	font-weight: var(--bold);
@@ -142,7 +143,6 @@ section {
 	scroll-behavior: smooth;
 }
 
-/* Hacky solution but I can get away with it for now */
 section, section:target ~ section.home  {
 	display: none;
 }
@@ -217,9 +217,10 @@ button[icon]::before,
 ::marker
 { font-family: var(--icon); }
 
-info,
+dialog,
 code {
 	display: inline-block;
+	position: relative;
 
 	margin-block: var(--standard-padding);
 	padding: var(--max-padding);
@@ -235,7 +236,7 @@ code {
 
 	overflow-wrap: break-word;
 }
-info::before,
+dialog::before,
 code::before {
 	display: block;
 	content: attr(title);
@@ -243,22 +244,22 @@ code::before {
 	padding-bottom: var(--min-padding);
 }
 
-info.link-card::before {
+dialog.link-card::before {
 	content: 'fga.sh/' attr(link);
 	color: var(--accent);
 }
 
-info.recommended::before,
+dialog.recommended::before,
 code.recommended::before {
 	color: var(--accent);
 }
 
-info.warning::before,
+dialog.warning::before,
 code.warning::before {
 	color: var(--yellow-1)
 }
 
-info.error::before,
+dialog.error::before,
 code.error::before {
 	color: var(--red-5);
 }
@@ -324,8 +325,9 @@ footer nav {
 	}
 }
 
-summary > * {
-	display: inline-block;
+summary {
+	display: block;
+	margin-block: var(--min-padding);
 }
 summary {
 	list-style: none;
