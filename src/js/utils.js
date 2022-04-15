@@ -104,7 +104,7 @@ let screenLargerThan =(size) => {
 	).matches;
 };
 
-/* Animate HTML appending */
-$.fn.appendAnimated = function(html) {
-	this.append(html).show('slow');
+/* jQuery showModal() extension for <dialog>s */
+$.fn.showModal = function() {
+	this[0].showModal();
 };

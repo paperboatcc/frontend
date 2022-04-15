@@ -8,7 +8,7 @@ $(urlbox).on('invalid', (event) => {
 
 		case 'do a barrel roll': {
 			event.preventDefault();
-			$('body')
+			$('main')
 			.css('transform', 'rotate(360deg)')
 			.css('transition', 'var(--slow-animation)');
 			break;
@@ -19,7 +19,7 @@ $(urlbox).on('invalid', (event) => {
 			$('body').html( $('#credits').prop('outerHTML') );
 			$('#credits')
 			.wrap(
-				`<marquee id='screensaver' class='screensaver'
+				`<marquee class='screensaver'
 					direction='down' behavior='alternate'
 				>
 					<marquee behavior='alternate'>
