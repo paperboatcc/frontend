@@ -4,7 +4,8 @@
   "description": "Fasm.ga's new website",
   "main": "src/index.js",
   "scripts": {
-    "start": "http-server ."
+    "start": "http-server .",
+    "dev": "http-server . -c-1 --cors"
   },
   "repository": {
     "type": "git",
