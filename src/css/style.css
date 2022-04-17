@@ -487,7 +487,6 @@ input:not([type=submit]):hover {
 }
 
 nav a {
-	margin-inline-end: var(--min-padding);
 	padding: var(--standard-padding);
 
 	font-family: var(--monospace);
@@ -497,9 +496,6 @@ nav a {
 	white-space: var(--no-wrap);
 
 	cursor: var(--link-cursor);
-}
-nav a::before {
-	content: attr(icon);
 }
 nav a::after {
 	content: attr(title);
