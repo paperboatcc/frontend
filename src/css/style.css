@@ -103,8 +103,6 @@ section[subtitle]::before,
 summary {
 	font-family: var(--subheadline);
 	font-size: var(--subheadline-size);
-	font-weight: var(--bold);
-	letter-spacing: var(--bold-letter-spacing);
 }
 
 pre,
@@ -226,7 +224,6 @@ nav a::before,
 ::marker {
 	content: attr(icon);
 
-	margin-inline-end: var(--min-padding);
 	vertical-align: var(--icon-alignment);
 
 	font-family: var(--icon);
@@ -306,8 +303,7 @@ code.error::before {
 /***
 	Sections and parts of the webpage
 ***/
-header, footer
-{
+header, footer {
 	display: block;
 
 	padding: var(--standard-padding);
@@ -389,14 +385,17 @@ summary:hover::before {
 /***
 	Interactive user controls: buttons, inputs and forms
 ***/
+form,
 form > div {
-	display: grid !important;
+	display: grid;
+	column-gap: var(--min-padding);
+	row-gap: var(--standard-padding);
+}
+form > div {
 	grid-template-areas:
 		'label label'
 		'input enter'
 		'submit submit';
-	column-gap: var(--min-padding);
-	row-gap: var(--standard-padding);
 }
 
 form > div label {

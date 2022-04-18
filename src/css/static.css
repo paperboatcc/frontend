@@ -30,6 +30,8 @@
 
 	--grid-columns: repeat( auto-fill, minmax(fit-content, 0) );
 	--grid-gaps: var(--standard-padding);
+	--responsive-columns: repeat( 2, min-content );
+	--responsive-rows: repeat( 2, min-content );
 
 	--size-offset-10: 4px;
 	--size-offset-20: 8px;
@@ -85,7 +87,7 @@
 	--thin: 100;
 	--light: 200;
 	--regular: 300;
-	--bold: 600;
+	--bold: 500;
 	--thick: 700;
 
 	--text-spacing: ' ';
