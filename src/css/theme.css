@@ -72,13 +72,15 @@
 	--background-3: var(--lunar-haze-3);
 	--background-4: var(--lunar-haze-4);
 	--background-5: var(--lunar-haze-5);
-
+	
 	--foreground: var(--arctic-haze-1);
 	--foreground-2: var(--arctic-haze-3);
 	--foreground-3: var(--arctic-haze-3);
 	--foreground-4: var(--arctic-haze-4);
 	--foreground-5: var(--arctic-haze-5);
 
+	--color: var(--foreground);
+	
 	--overlay-foreground-5: var(--foreground-2);
 	--overlay-foreground-10: var(--foreground-3);
 	--overlay-foreground-15: var(--foreground-4);
@@ -95,6 +97,8 @@
 	--foreground-3: var(--lunar-haze-3);
 	--foreground-4: var(--lunar-haze-4);
 	--foreground-5: var(--lunar-haze-5);
+
+	--color: var(--foreground);
 
 	--overlay-foreground-5: var(--foreground-2);
 	--overlay-foreground-10: var(--foreground-3);
@@ -114,6 +118,8 @@
 		--foreground-3: var(--lunar-haze-3);
 		--foreground-4: var(--lunar-haze-4);
 		--foreground-5: var(--lunar-haze-5);
+
+		--color: var(--foreground);
 	
 		--overlay-foreground-5: var(--foreground-2);
 		--overlay-foreground-10: var(--foreground-3);

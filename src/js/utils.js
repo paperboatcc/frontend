@@ -6,6 +6,9 @@
 */
 
 
+/* Select an element for the document */
+// let $ =(selector) => document.querySelector(selector);
+
 /* Change the user's location */
 function go(href) {
 	window.location.href = href;
