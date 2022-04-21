@@ -7,7 +7,30 @@
 
 
 /* Select an element for the document */
-// let $ =(selector) => document.querySelector(selector);
+let $ =(selector) => {
+	let element = document.querySelectorAll(selector);
+	element[`styling`] = function(rule = null, value = null) {
+		let style = element.style;
+		let computedStyle = getComputedStyle(element);
+		if (rule) return computedStyle.getPropertyValue(rule);
+		if (rule && value) style.setProperty(rule, value);
+		return computedStyle;
+	}
+}
+let page =()=> {
+	let root = $(`html`);
+	root[`variable`] = function(name, value = null) {
+		root.styling(name, value);
+	}
+  root[`lang`] = function(lang = null) {
+    if (lang) root.setAttr(lang);
+    return root.getAttr(lang);
+  }
+  root[`theme`] = function(theme = null) {
+    if (theme) $(`[name=color-scheme]`).setAttr(theme);
+    return $(`[name=color-scheme]`).getAttr(lang);
+  }
+}
 
 /* Change the user's location */
 function go(href) {
@@ -48,25 +71,6 @@ function moveTo(page) {
 	window.location.hash = path;
 }
 
-/* Get or set the value a CSS style variable */
-function css(name, value = null) {
-	// Check if the name starts with -- (the CSS property prefix)
-	// if it doesn't, prepend it automatically
-	if ( !name.startsWith('--') ) { name = `--${name}`; }
-
-	// If specified, change the variable's value
-	if ( value !== null )
-		return $(`:root`).css(name, value);
-	// Else return the value using jQuery
-	return $(`:root`).css(name);
-}
-
-/* Change the language */
-function setLang(lang) {
-	$(`html`)
-	.attr('lang', lang);
-}
-
 /* Toggles document design mode on/off */
 function design() {
 	let isDesignModeOn
@@ -77,12 +81,6 @@ function design() {
 	return document.designMode
 		= isDesignModeOn
 		? 'off' : 'on';
-}
-
-/* Change the theme */
-function setTheme(theme) {
-	$(`html`)
-	.attr('theme', theme);
 }
 
 /* Generate a random whole number */
@@ -105,15 +103,4 @@ let screenLargerThan =(size) => {
 	return window.matchMedia(
 		`only screen and (min-width: ${size}px)`
 	).matches;
-};
-
-/* jQuery showModal() extension for <dialog>s */
-$.fn.show = function() {
-	this[0]
-	.show();
-	$(this)
-	.css( 'animation', 'var(--plop-in)' );
-};
-$.fn.showModal = function() {
-	this[0].showModal();
 };
