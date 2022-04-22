@@ -51,3 +51,9 @@ sharelink.onclick =()=> {
 	};
 	navigator.share(data);
 };
+
+window.onhashchange =(event)=> {
+	if (window.location.hash === '#login') {
+		signin.showModal();
+	}
+};

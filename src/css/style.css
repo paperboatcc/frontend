@@ -123,6 +123,11 @@ img {
 	list-style: '└ ';
 }
 
+::backdrop {
+	background: var(--background);
+	opacity: var(--min-opacity);
+}
+
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
 
 /***
@@ -513,6 +518,9 @@ nav a {
 
 	cursor: var(--link-cursor);
 }
+nav a.secondary {
+	float: right;
+}
 @media only screen and (max-width: 800px) {
 	header nav a::after {
 		display: none;
@@ -520,4 +528,7 @@ nav a {
 }
 nav[orientation=vertical] a {
 	display: block;
+}
+nav[orientation=vertical] a.secondary {
+	margin-top: auto;
 }

@@ -35,14 +35,7 @@ let page =()=> {
 	root[`variable`] = function(name, value = null) {
 		root.styling(name, value);
 	}
-	root[`lang`] = function(lang = null) {
-		if (lang) root.setAttr(lang);
-		return root.getAttr(lang);
-	}
-	root[`theme`] = function(theme = null) {
-		if (theme) $(`[name=color-scheme]`).setAttr(theme);
-		return $(`[name=color-scheme]`).getAttr(lang);
-	}
+	root[`theme`] = root.getAttribute('theme');
 
 	return root;
 }
