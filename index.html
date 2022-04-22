@@ -9,71 +9,66 @@
 <!DOCTYPE html>
 <html lang="en" theme="auto">
 <head>
-	<meta charset="UTF-8" />
-	<meta name='viewport'
-		content="width=device-width, initial-scale=1.0" />
-	<meta title="Fasm.ga — The FOSS URL Shortener" />
-	<meta name='description'
-		content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta id="color-scheme" name="color-scheme" content="light dark">
+	<meta title="Fasm.ga — The FOSS URL Shortener">
+	<meta name="description"
+		content="">
 	<title>Fasm.ga</title>
 </head>
 
-<script id='jquery'
-	src="https://code.jquery.com/jquery-3.6.0.min.js"
-	integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
-	crossorigin="anonymous"
-></script>
-<script async src="./res/index.js?M3.999"></script>
-<link id='style' rel='stylesheet'
-	href="./src/css/style.css?M3.999" />
-<link async rel='icon'
-	href="./res/raster/favicon.ico?M3.999" />
 <script src="./src/js/utils.js?M3.999"></script>
+
+<script async src="./res/index.js?M3.999"></script>
+<link id="style" rel="stylesheet" href="./src/css/style.css?M3.999">
+<link async rel="icon" href="./res/raster/favicon.ico?M3.999">
 
 <body>
 	<header>
 	</header>
 
 	<main>
-		<section id='dashboard'
-			title='Dashboard'
-		></section>
+		<section id="dashboard" title="Dashboard"></section>
 
-		<section id='settings'
-			title='Settings'
-		></section>
+		<section id="settings" title="Settings"></section>
 
-		<section id='_home' class='home'
-			title='Shorten a link'
-		>
-			<form id='newlink'>
+		<section id="_home" class="home" title="Shorten a link">
+			<form id="newlink">
 				<div>
-					<label for='urlbox' icon='&#xE71B;'>
+					<label for="urlbox" icon="&#xE71B;">
 						URL
 					</label>
-					<input id='urlbox'
-						type='url' name='url' autocomplete='url'
-						placeholder='Input any URL'
-						required />
-					<input id='submiturl'
-						type='submit'
-						value='&#xE72A;' />
+
+					<input id="urlbox"
+						type="url" name="url" autocomplete="url"
+						placeholder="Input any URL"
+						required>
+
+					<input id="submiturl"
+						type="submit"
+						value="&#xE72A;">
 				</div>
 			</form>
 
 			<main>
-				<dialog id='link' class='card'>
-					<button id='copylink' class='primary show-completed'
-						icon='&#xE8C8;'>Copy</button> 
-					<button id='deletelink' class='negative show-completed'
-						icon='&#xE74D;'>Delete</button>
-					<button id='sharelink' icon='&#xE72D;'>Share</button>
+				<dialog id="link" class="card"
+					link="" original="">
+					<button id="copylink" class="primary show-completed" icon="&#xE8C8;">
+						Copy
+					</button>
+
+					<button id="deletelink" class="negative show-completed" icon="&#xE74D;">
+						Delete
+					</button>
+
+					<button id="sharelink" icon="&#xE72D;">
+						Share
+					</button>
 				</dialog>
 			</main>
 
-			<dialog id='invalidurl' class='error'
-				title='Invalid URL'
-			>
+			<dialog id="invalidurl" class="error" title="Invalid URL">
 				The URL you enter is empty, not valid or not eligible for shortening.
 			</dialog>
 			
@@ -82,13 +77,15 @@
 
 				<form>
 					<div>
-						<label for='format' icon='&#xE8E9;'>
+						<label for="format" icon="&#xE8E9;">
 							ID format
 						</label>
-						<input id='format'
-							type='text' name='format' list='idpresets'
-							placeholder='abcdefgh' />
-						<datalist id='idpresets'>
+
+						<input id="format"
+							type="text" name="format" list="idpresets"
+							placeholder="abcdefgh">
+
+						<datalist id="idpresets">
 							<option value="abcdefgh" />
 							<option value="abc12345" />
 							<option value="aBCde" />
@@ -96,31 +93,33 @@
 					</div>
 
 					<div>
-						<label for='password' icon='&#xF439;'>
+						<label for="password" icon="&#xF439;">
 							Password protection
 						</label>
-						<input id='password'
-							type='password' name='password'
-							placeholder='***' />
+
+						<input id="password"
+							type="password" name="password"
+							placeholder="***">
 					</div>
 
 					<div>
-						<label for='embed' icon='&#xE70B;'>
+						<label for="embed" icon="&#xE70B;">
 							Custom embed
 						</label>
-						<form id='embed'>
+
+						<form id="embed">
 							<div>
-								<input id='embedtitle'
-									type='text' name='embedtitle'
-									placeholder='Title' />
+								<input id="embedtitle"
+									type="text" name="embedtitle"
+									placeholder="Title">
 							</div>
 
 							<br/><br/>
 
 							<div>
-								<textarea id='embedcontent'
-									name='embedcontent'
-									placeholder='Description'
+								<textarea id="embedcontent"
+									name="embedcontent"
+									placeholder="Description"
 								></textarea>
 							</div>
 						</form>
@@ -129,14 +128,14 @@
 			</details>
 
 			<noscript>
-				<dialog id='noscript' class='warning'
-					title='JavaScript is not enabled'
-				open>
+				<dialog id="noscript" class="warning" title="JavaScript is not enabled" open>
 					This website will not function properly if scripts are disabled.
 					Please enable JavaScript for <a href="https://fasmga.org">fasmga.org</a>.
+
 					<br/><br/>
+
 					<a href="">
-						<button icon='&#xE727;'>
+						<button icon="&#xE727;">
 							View this site for older browsers
 						</button>
 					</a>
@@ -147,18 +146,12 @@
 </body>
 
 <script async>
-	$('header')
+	$("header")
 	.load("./content/pages/header.html");
-	$('#dashboard')
+	$("#dashboard")
 	.load("./content/pages/dashboard.html");
-	$('#settings')
+	$("#settings")
 	.load("./content/pages/settings.html");
 </script>
 
-<script async
-	src="./res/dynamic.js?M3.999"></script>
-<script
-	src="./src/js/index.js?M3.999"></script>
-<script defer
-	src="./src/js/other.js?M3.999"></script>
-</html>
+<script src="./src/js/index.js?M3.999"></script>

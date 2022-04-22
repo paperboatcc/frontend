@@ -8,28 +8,43 @@
 
 /* Select an element for the document */
 let $ =(selector) => {
-	let element = document.querySelectorAll(selector);
+	if (typeof selector != 'string') return selector;
+	let element = document.querySelector(selector);
+
+	element[`load`] = function(uri) {
+		fetch(uri)
+		.then( (response) => response.text() )
+		.then( (data) => { element.innerHTML = data; });
+	};
+
 	element[`styling`] = function(rule = null, value = null) {
 		let style = element.style;
 		let computedStyle = getComputedStyle(element);
+
 		if (rule) return computedStyle.getPropertyValue(rule);
 		if (rule && value) style.setProperty(rule, value);
+
 		return computedStyle;
 	}
+
+	return element;
 }
 let page =()=> {
 	let root = $(`html`);
+
 	root[`variable`] = function(name, value = null) {
 		root.styling(name, value);
 	}
-  root[`lang`] = function(lang = null) {
-    if (lang) root.setAttr(lang);
-    return root.getAttr(lang);
-  }
-  root[`theme`] = function(theme = null) {
-    if (theme) $(`[name=color-scheme]`).setAttr(theme);
-    return $(`[name=color-scheme]`).getAttr(lang);
-  }
+	root[`lang`] = function(lang = null) {
+		if (lang) root.setAttr(lang);
+		return root.getAttr(lang);
+	}
+	root[`theme`] = function(theme = null) {
+		if (theme) $(`[name=color-scheme]`).setAttr(theme);
+		return $(`[name=color-scheme]`).getAttr(lang);
+	}
+
+	return root;
 }
 
 /* Change the user's location */
