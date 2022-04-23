@@ -18,11 +18,11 @@
 	<title>Fasm.ga</title>
 </head>
 
-<script src="./src/js/utils.js?M3.999"></script>
+<script src="js/utils.js"></script>
 
-<script async src="./res/index.js?M3.999"></script>
-<link id="style" rel="stylesheet" href="./src/css/style.css?M3.999">
-<link async rel="icon" href="./res/raster/favicon.ico?M3.999">
+<script async src="res/index.js"></script>
+<link id="style" rel="stylesheet" href="css/style.css">
+<link async rel="icon" href="res/favicon.ico">
 
 <body>
 	<header>
@@ -31,7 +31,7 @@
 	<main>
 		<section id="dashboard" title="Dashboard"></section>
 
-		<section id="settings" title="Settings"></section>
+		<section id="about" title="Settings"></section>
 
 		<section id="_home" class="home" title="Shorten a link">
 			<form id="newlink">
@@ -98,7 +98,7 @@
 						</label>
 
 						<input id="password"
-							type="password" name="password"
+							type="password" name="password" autocomplete="current-password"
 							placeholder="***">
 					</div>
 
@@ -149,14 +149,14 @@
 </body>
 
 <script async>
-	$("header")
-	.load("./content/pages/header.html");
-	$("#dashboard")
-	.load("./content/pages/dashboard.html");
-	$("#settings")
-	.load("./content/pages/settings.html");
-	$("#login")
-	.load("./content/pages/login.html");
+	let nsfw = false;
+	if (nsfw) {
+		querySelector(`main`).loadPage("content/pages/nsfw.html");
+	}
+
+	for ([id, file] of sitemap.entries()) {
+		querySelector(id).loadPage(file);
+	}
 </script>
 
-<script src="./src/js/index.js?M3.999"></script>
+<script src="js/index.js"></script>

@@ -1,24 +1,29 @@
-let markup = {
+let content = {
 	_index: "index.html",
 	index: this._index
 };
+let sitemap = new Map()
+	.set('header', "content/pages/header.html")
+	.set('#dashboard', "content/pages/dashboard.html")
+	.set('#about', "content/pages/about.html")
+	.set('#login', "content/pages/login.html");
 let pages = {
 	_home: '#_home',
 	home: this._home,
 	debugging: '#debugging',
 	dashboard: '#dashboard',
-	settings: '#settings'
+	about: '#about'
 };
 let stylesheets = {
-	style: "./src/css/style.css",
-	static: "./src/css/static.css"
+	style: "css/style.css",
+	static: "css/static.css"
 };
 let themes = {
-	dark: "./src/css/theme/dark.css",
-	light: "./src/css/theme/light.css"
+	dark: "css/theme/dark.css",
+	light: "css/theme/light.css"
 };
 let scripts = {
-	util: "./src/js/utils.js",
-	main: "./src/js/index.js",
-	debug: "./src/js/debugger.js"
+	util: "js/utils.js",
+	main: "js/index.js",
+	debug: "js/debugger.js"
 };

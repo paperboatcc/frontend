@@ -1,7 +1,7 @@
 /*
 	-> Name: static.css
 	-> Description: Non–dynamic properties and environment variables
-	-> Resource: /src/css/static.css
+	-> Resource: /css/static.css
 	-> Licensing: GPLv3 | © 2022, Fasm.ga
 */
 
@@ -10,12 +10,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=auto");
 @font-face {
 	font-family: 'JetBrains Mono NF';
-	src: url("../../res/fonts/JB_Mono_NF.ttf");
+	src: url("../res/fonts/JB_Mono_NF.ttf");
 	font-display: auto;
 }
 @font-face {
 	font-family: 'Segoe Fluent Icons';
-	src: url("../../res/fonts/Segoe_Fluent_Icons.ttf");
+	src: url("../res/fonts/Segoe_Fluent_Icons.ttf");
 }
 
 
@@ -87,7 +87,7 @@
 	--thin: 100;
 	--light: 200;
 	--regular: 300;
-	--bold: 500;
+	--bold: 600;
 	--thick: 700;
 
 	--text-spacing: ' ';

@@ -1,13 +1,13 @@
 /*
 	-> Name: style.css
 	-> Description: Document stylesheet for the Fasm.ga webpage.
-	-> Resource: /src/css/style.css
+	-> Resource: /css/style.css
 	-> Licensing: GPLv3 | © 2022, Fasm.ga
 */
 
 /*** Imports ***/
-@import url("./static.css?M3.999");
-@import url("./theme.css?M3.999");
+@import url("static.css");
+@import url("theme.css");
 
 
 * {
@@ -16,7 +16,8 @@
 	text-decoration: none;
 	line-height: var(--default-line-height);
 
-	color: var(--foreground);
+	background: var(--background);
+	color: var(--color);
 
 	scroll-behavior: smooth;
 	will-change: transition;
@@ -30,8 +31,6 @@ html, body {
 	padding: var(--page-padding);
 
 	height: 100%;
-
-	background: var(--background);
 }
 
 body {
@@ -64,13 +63,14 @@ body > main {
 	Styles for standard HTML elements
 ***/
 a {
-	color: var(--accent);
+	background: var(--transparency);
+	--color: var(--accent);
 
 	text-decoration: var(--link-text-decoration);
 	cursor: var(--link-cursor);
 }
 a:hover {
-	color: var(--accent-alt);
+	--color: var(--accent-alt);
 }
 
 b,
@@ -124,7 +124,6 @@ img {
 }
 
 ::backdrop {
-	background: var(--background);
 	opacity: var(--min-opacity);
 }
 
@@ -217,10 +216,10 @@ section[subtitle]::before {
 .logo {
 	font-family: var(--display);
 
-	color: var(--foreground-2);
+	--color: var(--foreground-2);
 }
 .logo:hover {
-	color: var(--accent);
+	--color: var(--accent);
 }
 
 icon,
@@ -265,8 +264,7 @@ code {
 	border: var(--element-border);
 	border-radius: var(--element-corner-radius);
 
-	background: var(--background);
-	color: var(--overlay-foreground-5);
+	--color: var(--overlay-foreground-5);
 
 	overflow-wrap: break-word;
 }
@@ -285,22 +283,22 @@ dialog[open] {
 .card::before {
 	content: attr(link);
 
-	color: var(--accent);
+	--color: var(--accent);
 }
 
 dialog.recommended::before,
 code.recommended::before {
-	color: var(--accent);
+	--color: var(--accent);
 }
 
 dialog.warning::before,
 code.warning::before {
-	color: var(--yellow-1)
+	--color: var(--yellow-1);
 }
 
 dialog.error::before,
 code.error::before {
-	color: var(--red-5);
+	--color: var(--red-5);
 }
 
 
@@ -314,8 +312,6 @@ header, footer {
 
 	padding: var(--standard-padding);
 	z-index: var(--on-top);
-
-	background: var(--background);
 }
 header {
 	border-bottom: var(--section-border);
@@ -331,6 +327,7 @@ nav {
 	padding: var(--standard-padding);
 
 	border-radius: var(--section-corner-radius);
+	background: var(--transparency);
 }
 
 nav[orientation=horizontal] {
@@ -341,11 +338,6 @@ nav[orientation=vertical] {
 
 	overflow-y: auto;
 	overflow-x: hidden;
-}
-
-header nav,
-footer nav {
-	text-align: center;
 }
 
 @media only screen and (max-width: 800px) {
@@ -383,7 +375,7 @@ summary:hover::before {
 	width: 100vw;
 	height: 100vh;
 
-	background: var(--lunar-haze-3);
+	--background-color: var(--lunar-haze-3);
 }
 
 /*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
@@ -441,18 +433,13 @@ button {
 	vertical-align: middle;
 }
 
-button:hover, input[type=submit]:hover,
-button.primary, main > form input[type=submit] {
+button:hover, input[type=submit]:hover {
 	border: var(--min-border);
 	--color: var(--accent);
-}
-main button:hover, button.primary:hover, main > form input[type=submit]:hover {
-	--color: var(--accent-alt);
 }
 button.completed::before {
 	content: '\E73E';
 }
-
 button.disabled {
 	pointer-events: none;
 	cursor: not-allowed;
@@ -465,8 +452,6 @@ input[type=submit] {
 	padding: var(--max-padding);
 
 	font-size: var(--icon-button-size);
-
-	color: var(--background);
 }
 main > form input:not([type=submit]):hover {
 	border-color: var(--accent-alt);
@@ -482,14 +467,13 @@ textarea {
 
 	font-family: var(--monospace);
 
-	background: var(--transparency);
-	color: var(--foreground);
+	--color: var(--foreground);
 }
 input:not([type=submit]):hover,
 textarea:hover {
 	border: var(--control-accent-boundary);
 
-	color: var(--accent);
+	--color: var(--accent);
 }
 input:not([type=submit]) {
 	resize: none;
@@ -511,10 +495,9 @@ nav a {
 	padding: var(--standard-padding);
 
 	font-family: var(--monospace);
-
-	color: var(--foreground);
-
 	white-space: var(--no-wrap);
+
+	--color: var(--foreground);
 
 	cursor: var(--link-cursor);
 }

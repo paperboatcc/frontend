@@ -1,44 +1,50 @@
 /*
 	-> Name: utils.js
 	-> Description: General utility/debugging functions
-	-> Resource: /src/js/utils.js
+	-> Resource: /js/utils.js
 	-> Licensing: GPLv3 | © 2022, Fasm.ga
 */
 
 
-/* Select an element for the document */
-let $ =(selector) => {
-	if (typeof selector != 'string') return selector;
-	let element = document.querySelector(selector);
-
-	element[`load`] = function(uri) {
-		fetch(uri)
-		.then( (response) => response.text() )
-		.then( (data) => { element.innerHTML = data; });
-	};
-
-	element[`styling`] = function(rule = null, value = null) {
-		let style = element.style;
-		let computedStyle = getComputedStyle(element);
-
-		if (rule) return computedStyle.getPropertyValue(rule);
-		if (rule && value) style.setProperty(rule, value);
-
-		return computedStyle;
-	}
+/* Select an element from the document */
+let querySelector =(selector) => {
+	let element = typeof selector == 'string'
+	              ? document.querySelector(selector)
+								: selector;
 
 	return element;
 }
-let page =()=> {
-	let root = $(`html`);
 
-	root[`variable`] = function(name, value = null) {
-		root.styling(name, value);
-	}
-	root[`theme`] = root.getAttribute('theme');
-
-	return root;
+Element.prototype
+.setContent = function(html) {
+	this.innerHTML = html;
+	return this;
 }
+Element.prototype
+.loadPage = function(uri) {
+	fetch(uri)
+	.then( (response) => response.text() )
+	.then( (data) => { this.setContent(data) });
+
+	return this;
+};
+
+Element.prototype
+.getStyle = function(rule = null, value = null) {
+	let computedStyle = getComputedStyle(this);
+
+	if (rule) return computedStyle.getPropertyValue(rule);
+	if (rule && value) {
+		this.style.setProperty(rule, value);
+		return this;
+	}
+
+	return computedStyle;
+}
+
+document.documentElement.theme = document.documentElement.getAttribute('theme');
+
+let root = document.documentElement;
 
 /* Change the user's location */
 function go(href) {
@@ -112,3 +118,7 @@ let screenLargerThan =(size) => {
 		`only screen and (min-width: ${size}px)`
 	).matches;
 };
+
+Array.prototype.bad = function() {
+	console.log("im bad")
+}

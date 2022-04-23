@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.7.0",
   "description": "Fasm.ga's new website",
-  "main": "src/index.js",
+  "main": "js/index.js",
   "scripts": {
     "start": "http-server .",
     "dev": "http-server . -c-1 --cors"

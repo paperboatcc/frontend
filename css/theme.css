@@ -1,7 +1,7 @@
 /*
 	-> Name: light.css
 	-> Description: Charm.ga light theme for CSS
-	-> Resource: /src/css/themes/light.css
+	-> Resource: /css/themes/light.css
 	-> Licensing: GPLv3 | © 2022, Fasm.ga
 */
 
@@ -16,7 +16,7 @@
 	--arctic-haze-4: hsl(30, 4%, 73%);
 	--arctic-haze-5: hsl(30, 4%, 69%);
 
-	--lunar-haze-1: hsl(0, 0%, 7%);
+	--lunar-haze-1: black;
 	--lunar-haze-2: hsl(0, 10%, 12%);
 	--lunar-haze-3: hsl(0, 15%, 17%);
 	--lunar-haze-4: hsl(0, 20%, 22%);
@@ -63,8 +63,8 @@
 	--yellow-9: hsl(49, 97%, 72%);
 }
 
-.accent {	color: var(--accent); }
-.primary { background-color: var(--accent); }
+.accent {	--color: var(--accent); }
+.primary { --color: var(--accent); }
 
 [theme=dark], [theme=auto] {
 	--background: var(--lunar-haze-1);
