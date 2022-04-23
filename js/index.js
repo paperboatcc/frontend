@@ -1,7 +1,7 @@
 /*
 	-> Name: index.js
 	-> Description: The main backend script for the webpage.
-	-> Resource: /src/js/index.js
+	-> Resource: /js/index.js
 	-> Licensing: GPLv3 | © 2022, Fasm.ga
 */
 
@@ -32,28 +32,18 @@ urlbox.oninvalid =(event)=> {
 	}
 };
 
-$('button.show-completed').onclick =(event) => {
-	$(event.currentTarget).addClass('completed');
+querySelector('button.show-completed').onclick =(event) => {
+	event.currentTarget.addClass('completed');
 };
 
 copylink.onclick =()=> {
-	let link = link.link;
-	navigator.clipboard.writeText(link);
+	navigator.clipboard.writeText(link.link);
 };
 sharelink.onclick =()=> {
-	let link = link.link;
-	let original = link.original;
-
 	let data = {
-		title: original,
-		text: `Redirect to ${original}.`,
-		url: link
+		title: link.original,
+		text: `Redirect to ${link.original}.`,
+		url: link.link
 	};
 	navigator.share(data);
-};
-
-window.onhashchange =(event)=> {
-	if (window.location.hash === '#login') {
-		signin.showModal();
-	}
 };
