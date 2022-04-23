@@ -22,7 +22,7 @@ urlbox.oninvalid =(event)=> {
 	event.preventDefault();
 	let formattedURL = `https://${urlbox.value}`;
 
-	if (urlbox.value === '2+3') go("https://billwurtz.com/2plus3.mp4");
+	if (urlbox.value === '2+3') return go("https://billwurtz.com/2plus3.mp4");
 
 	if ( isValidURL(formattedURL) ) {
 		urlbox.value = formattedURL;
