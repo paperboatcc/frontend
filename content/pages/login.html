@@ -7,8 +7,8 @@
 </head>
 <body>
 	<main>
-		<dialog id="signin" title="Log in">
-			<form>
+		<dialog id="signin" title="Log in" open>
+			<form action="dialog">
 				<div>
 					<label for="username" icon="&#xE910;">
 						Username
@@ -19,13 +19,16 @@
 				</div>
 
 				<div>
-					<label for="password" icon="&#xF439;">
+					<label for="password" icon="&#xE72E;">
 						Password
 					</label>
 					<input id="password"
 						type="text" placeholder="Password"
 						required>
 				</div>
+
+				<input type='submit'
+					value='&#xE72A;'>
 			</form>
 		</dialog>
 	</main>

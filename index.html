@@ -31,7 +31,7 @@
 	<main>
 		<section id="dashboard" title="Dashboard"></section>
 
-		<section id="about" title="Settings"></section>
+		<section id="about" title="About"></section>
 
 		<section id="_home" class="home" title="Shorten a link">
 			<form id="newlink">
@@ -149,14 +149,17 @@
 </body>
 
 <script async>
-	let nsfw = false;
-	if (nsfw) {
-		querySelector(`main`).loadPage("content/pages/nsfw.html");
-	}
+	let nsfw, login;
+	nsfw = false;
+	if (nsfw)
+		querySelector(`main`).loadPage(content.nsfw);
+	login = location.hash == '#login';
+	if (login)
+		querySelector(`main`).loadPage(sitemap.get('#login'));
 
 	for ([id, file] of sitemap.entries()) {
 		querySelector(id).loadPage(file);
 	}
 </script>
 
-<script src="js/index.js"></script>
+<script src="js/script.js"></script>

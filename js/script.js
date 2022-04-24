@@ -10,9 +10,18 @@ let linkShortener = document.forms.newlink;
 
 let shortener =(event)=> {
 	event.preventDefault();
+	let shortenedLink = 'fga.sh/example';
+	let originalUrl = urlbox.value;
+	// let linkPreview = getSitePreview(originalUrl);
 
-	link.setAttribute( 'link', 'fga.sh/example' );
-	link.setAttribute( 'original', urlbox.value );
+	link.setAttribute( 'link', shortenedLink );
+	link.setAttribute( 'original', originalUrl );
+	/* try {
+		link.setAttribute( 'background', linkPreview.image );
+		link.styling( 'background', `url("${linkPreview.image}")` );
+	} catch {
+		link.removeAttribute('background');
+	} */
 	link.show();	
 }
 

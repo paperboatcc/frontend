@@ -12,7 +12,8 @@ let pages = {
 	home: this._home,
 	debugging: '#debugging',
 	dashboard: '#dashboard',
-	about: '#about'
+	about: '#about',
+	nsfw: '#nsfw'
 };
 let stylesheets = {
 	style: "css/style.css",

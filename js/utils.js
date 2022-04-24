@@ -22,10 +22,7 @@ Element.prototype
 }
 Element.prototype
 .loadPage = function(uri) {
-	fetch(uri)
-	.then( (response) => response.text() )
-	.then( (data) => { this.setContent(data) });
-
+	getText(uri, then =(text)=> { this.setContent(text); });
 	return this;
 };
 
@@ -71,15 +68,22 @@ function isValidURL(string) {
 		&& url.hostname.includes('.');
 }
 
+/* Fetch text from URI */
+function getText(uri, then =(result)=> {}) {
+	fetch(uri)
+	.then( (response) => response.text() )
+	.then( (result) => { then(result) });
+}
+
 /* Move to a specific section of the website */
 function moveTo(page) {
 	let path = page;
 	// Check if the page exists in the pages list
 	// If so, move to the associated path
 
-	if ( page in pages ) { path = pages[page]; }
+	if ( page in pages ) path = pages[page];
 	// Add a leading # hash to the given string if not already present
-	if ( !path.startsWith("#") ) { path = `#${path}`; }
+	if ( !path.startsWith("#") ) path = `#${path}`;
 
 	// Move to the specified section; it just adds #section to the URL
 	window.location.hash = path;
@@ -108,17 +112,33 @@ Math['pick'] = function(list) {
 }
 
 /* Handling screen sizes */
-let screenSmallerThan =(size) => {
-	return window.matchMedia(
-		`only screen and (max-width: ${size}px)`
-	).matches;
-};
-let screenLargerThan =(size) => {
-	return window.matchMedia(
-		`only screen and (min-width: ${size}px)`
-	).matches;
-};
+let screenSmallerThan =(size) => matchMedia(
+	`only screen and (max-width: ${size}px)`
+).matches;
+let screenLargerThan =(size) => matchMedia(
+	`only screen and (min-width: ${size}px)`
+).matches;
 
 Array.prototype.bad = function() {
 	console.log("im bad")
 }
+
+// Fuck, this won't work.
+/* function getSitePreview(uri) {
+	let siteDocument,
+		ogTitle, ogType, ogImage, ogUrl;
+	try {
+		getText(uri, then =(text)=> {
+			siteDocument = DOMParser.parseFromString(text);
+		});
+
+		ogTitle = siteDocument.querySelector('[name="og:title]');
+		ogType = siteDocument.querySelector('[name="og:type]');
+		ogImage = siteDocument.querySelector('[name="og:image]');
+		ogUrl = siteDocument.querySelector('[name="og:url]');
+	} catch {
+		return null;
+	}
+
+	return { ogTitle, ogType, ogImage, ogUrl };
+} */

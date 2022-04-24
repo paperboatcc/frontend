@@ -9,7 +9,6 @@
 @import url("static.css");
 @import url("theme.css");
 
-
 * {
 	font-family: var(--text);
 	font-size: var(--text-size);
@@ -24,7 +23,8 @@
 	transition: var(--animation);
 }
 
-html, body {
+html,
+body {
 	display: grid;
 
 	margin: var(--page-padding);
@@ -36,10 +36,9 @@ html, body {
 body {
 	display: grid;
 	grid-template-areas:
-		'header'
-		'content';
-	grid-template-rows:
-		min-content 1fr;
+		"header"
+		"content";
+	grid-template-rows: min-content 1fr;
 }
 
 body > main {
@@ -56,8 +55,8 @@ body > main {
 .flex {
 	display: flex;
 }
-			
-/*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
+
+/*** —————————————————— ***/ /*** —————————————————— ***/ /*** —————————————————— ***/ /*** —————————————————— ***/
 
 /***
 	Styles for standard HTML elements
@@ -76,19 +75,20 @@ a:hover {
 b,
 dialog::before,
 code::before,
-label
-{
+label {
 	font-weight: var(--bold);
 	letter-spacing: var(--bold-letter-spacing);
 }
 
-h1, .display {
+h1,
+.display {
 	font-family: var(--display);
 	font-size: var(--display-size);
 	letter-spacing: var(--bold-letter-spacing);
 }
 
-h2, .headline,
+h2,
+.headline,
 section::before,
 main > dialog::before {
 	font-family: var(--headline);
@@ -97,7 +97,8 @@ main > dialog::before {
 	letter-spacing: var(--bold-letter-spacing);
 }
 
-h3, .subheadline,
+h3,
+.subheadline,
 section[subtitle]::before,
 summary {
 	font-family: var(--subheadline);
@@ -117,17 +118,17 @@ img {
 }
 
 :not(ol) > li {
-	list-style: '├ ';
+	list-style: "├ ";
 }
 :not(ol) > li:last-of-type {
-	list-style: '└ ';
+	list-style: "└ ";
 }
 
 ::backdrop {
 	opacity: var(--min-opacity);
 }
 
-/*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
+/*** —————————————————— ***/ /*** —————————————————— ***/ /*** —————————————————— ***/ /*** —————————————————— ***/
 
 /***
 	Styles for website pages and sections, designed for fast page navigation
@@ -146,10 +147,12 @@ details {
 	scroll-behavior: smooth;
 }
 
-section:not([open]), section:target ~ section.home  {
+section:not([open]),
+section:target ~ section.home {
 	display: none;
 }
-section.home, section:target {
+section.home,
+section:target {
 	display: grid;
 	animation: var(--slide-in);
 }
@@ -158,7 +161,8 @@ section.home, section:target {
 	0% {
 		opacity: 0;
 		transform: translateX(-100%);
-	} 100% {
+	}
+	100% {
 		opacity: 1;
 		transform: none;
 	}
@@ -167,7 +171,8 @@ section.home, section:target {
 	0% {
 		opacity: 1;
 		transform: none;
-	} 100% {
+	}
+	100% {
 		opacity: 0;
 		transform: translateX(100%);
 	}
@@ -176,7 +181,8 @@ section.home, section:target {
 	0% {
 		max-height: 0px;
 		transform: translateX(-100%);
-	} 100% {
+	}
+	100% {
 		height: fit-content;
 		transform: none;
 	}
@@ -185,7 +191,8 @@ section.home, section:target {
 	0% {
 		max-height: none;
 		transform: none;
-	} 100% {
+	}
+	100% {
 		height: 0px;
 		transform: translateX(100%);
 	}
@@ -203,15 +210,23 @@ section[subtitle]::before {
 	content: attr(subtitle);
 }
 
-/*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
+/*** —————————————————— ***/ /*** —————————————————— ***/ /*** —————————————————— ***/ /*** —————————————————— ***/
 
 /***
 	Additional webpage or stylistic elements
 ***/
-.positive { --color: var(--accent); }
-.neutral { --color: var(--foreground-2); }
-.negative { --color: var(--red-5); }
-.disabled { opacity: var(--min-opacity); }
+.positive {
+	--color: var(--accent);
+}
+.neutral {
+	--color: var(--foreground-2);
+}
+.negative {
+	--color: var(--red-5);
+}
+.disabled {
+	opacity: var(--min-opacity);
+}
 
 .logo {
 	font-family: var(--display);
@@ -234,10 +249,11 @@ icon,
 }
 
 icon.fluent,
-input[type=submit],
+input[type="submit"],
 [icon]::before,
-::marker
-{ font-family: var(--icon); }
+::marker {
+	font-family: var(--icon);
+}
 
 [icon]::before {
 	margin-inline-end: var(--min-padding);
@@ -285,6 +301,13 @@ dialog[open] {
 
 	--color: var(--accent);
 }
+dialog[background] {
+	padding-block: var(--content-padding);
+
+	background: url('https://picsum.photos/seed/picsum/536/354');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
 dialog.recommended::before,
 code.recommended::before {
@@ -301,13 +324,13 @@ code.error::before {
 	--color: var(--red-5);
 }
 
-
-/*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
+/*** —————————————————— ***/ /*** —————————————————— ***/ /*** —————————————————— ***/ /*** —————————————————— ***/
 
 /***
 	Sections and parts of the webpage
 ***/
-header, footer {
+header,
+footer {
 	display: block;
 
 	padding: var(--standard-padding);
@@ -330,10 +353,10 @@ nav {
 	background: var(--transparency);
 }
 
-nav[orientation=horizontal] {
+nav[orientation="horizontal"] {
 	display: block;
 }
-nav[orientation=vertical] {
+nav[orientation="vertical"] {
 	line-height: var(--vertical-nav-padding);
 
 	overflow-y: auto;
@@ -364,11 +387,11 @@ summary {
 	cursor: var(--link-cursor);
 }
 summary::before {
-	content: '\E70D  ';
+	content: "\E70D  ";
 }
 [open] > summary::before,
 summary:hover::before {
-	content: '\E70E  ';
+	content: "\E70E  ";
 }
 
 .screensaver {
@@ -378,7 +401,7 @@ summary:hover::before {
 	--background-color: var(--lunar-haze-3);
 }
 
-/*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
+/*** —————————————————— ***/ /*** —————————————————— ***/ /*** —————————————————— ***/ /*** —————————————————— ***/
 
 /***
 	Interactive user controls: buttons, inputs and forms
@@ -391,9 +414,9 @@ form > div {
 }
 form > div {
 	grid-template-areas:
-		'label label'
-		'input enter'
-		'submit submit';
+		"label label"
+		"input enter"
+		"submit submit";
 }
 
 form > div label {
@@ -402,14 +425,15 @@ form > div label {
 form > div input {
 	grid-area: input;
 }
-form > div input:first-of-type ~ input[type=submit] {
+form > div input:first-of-type ~ input[type="submit"] {
 	grid-area: enter;
 }
-form > div input[type=submit]:last-child {
+form > div input[type="submit"]:last-child {
 	grid-area: submit;
 }
 
-button, input[type=submit] {
+button,
+input[type="submit"] {
 	display: inline-block;
 	vertical-align: top;
 
@@ -428,36 +452,37 @@ button, input[type=submit] {
 }
 button {
 	display: inline-block;
-	
+
 	font-family: var(--monospace);
 	vertical-align: middle;
 }
 
-button:hover, input[type=submit]:hover {
+button:hover,
+input[type="submit"]:hover {
 	border: var(--min-border);
 	--color: var(--accent);
 }
 button.completed::before {
-	content: '\E73E';
+	content: "\E73E";
 }
 button.disabled {
 	pointer-events: none;
 	cursor: not-allowed;
 }
 
-main > form input:not([type=submit]) {
+main > form input:not([type="submit"]) {
 	border-color: var(--accent);
 }
-input[type=submit] {
+input[type="submit"] {
 	padding: var(--max-padding);
 
 	font-size: var(--icon-button-size);
 }
-main > form input:not([type=submit]):hover {
+main > form input:not([type="submit"]):hover {
 	border-color: var(--accent-alt);
 }
 
-input:not([type=submit]),
+input:not([type="submit"]),
 textarea {
 	padding: var(--standard-padding);
 
@@ -469,17 +494,17 @@ textarea {
 
 	--color: var(--foreground);
 }
-input:not([type=submit]):hover,
+input:not([type="submit"]):hover,
 textarea:hover {
 	border: var(--control-accent-boundary);
 
 	--color: var(--accent);
 }
-input:not([type=submit]) {
+input:not([type="submit"]) {
 	resize: none;
 }
 
-input[type=file].img {
+input[type="file"].img {
 	display: inline-block;
 
 	padding: var(--max-padding);
@@ -487,8 +512,8 @@ input[type=file].img {
 	width: 100%;
 	height: 100%;
 }
-input[type=file].img::before {
-	content: '';
+input[type="file"].img::before {
+	content: "";
 }
 
 nav a {
@@ -509,9 +534,9 @@ nav a.secondary {
 		display: none;
 	}
 }
-nav[orientation=vertical] a {
+nav[orientation="vertical"] a {
 	display: block;
 }
-nav[orientation=vertical] a.secondary {
+nav[orientation="vertical"] a.secondary {
 	margin-top: auto;
 }
