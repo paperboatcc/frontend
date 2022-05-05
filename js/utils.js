@@ -24,24 +24,24 @@ Element.prototype
 .loadPage = function(uri) {
 	getText(uri, then =(text)=> { this.setContent(text); });
 	return this;
-};
+}
 
 Element.prototype
-.getStyle = function(rule = null, value = null) {
+.getStyle = function(rule = null) {
 	let computedStyle = getComputedStyle(this);
 
 	if (rule) return computedStyle.getPropertyValue(rule);
-	if (rule && value) {
-		this.style.setProperty(rule, value);
-		return this;
-	}
-
 	return computedStyle;
 }
-
-document.documentElement.theme = document.documentElement.getAttribute('theme');
+Element.prototype
+.setStyle = function(rule, value) {
+	this.style.setProperty(rule, value);
+	return this;
+}
 
 let root = document.documentElement;
+
+document.documentElement.theme = document.documentElement.getAttribute('theme');
 
 /* Change the user's location */
 function go(href) {
@@ -123,22 +123,11 @@ Array.prototype.bad = function() {
 	console.log("im bad")
 }
 
-// Fuck, this won't work.
-/* function getSitePreview(uri) {
-	let siteDocument,
-		ogTitle, ogType, ogImage, ogUrl;
-	try {
-		getText(uri, then =(text)=> {
-			siteDocument = DOMParser.parseFromString(text);
-		});
-
-		ogTitle = siteDocument.querySelector('[name="og:title]');
-		ogType = siteDocument.querySelector('[name="og:type]');
-		ogImage = siteDocument.querySelector('[name="og:image]');
-		ogUrl = siteDocument.querySelector('[name="og:url]');
-	} catch {
-		return null;
-	}
-
-	return { ogTitle, ogType, ogImage, ogUrl };
-} */
+Date.prototype.
+getYearDay = function() {
+	let start = new Date(this.getFullYear(), 0, 0);
+	let diff = (this - start)
+		+ ((start.getTimezoneOffset() - this.getTimezoneOffset()) * 60 * 1000);
+	let oneDay = 1000 * 60 * 60 * 24;
+	return day = Math.floor(diff / oneDay);
+}
